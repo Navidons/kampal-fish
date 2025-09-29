@@ -12,7 +12,7 @@ export default function KampalaFishExperience() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-              See the Kampala Fish Experience
+              See the Kampala Fried Fish Experience
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
               Take a visual journey through our operations, from fresh fish selection to happy customers enjoying our
@@ -25,7 +25,7 @@ export default function KampalaFishExperience() {
               <div className="relative h-64">
                 <Image
                   src="/fresh-fish-on-ice-market-display-professional-food.jpg"
-                  alt="Fresh fish selection at Kampala Fish"
+                  alt="Fresh fish selection at Kampala Fried Fish"
                   fill
                   className="object-cover"
                 />

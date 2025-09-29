@@ -34,7 +34,7 @@ export function VisualShowcase() {
     <section className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Why Choose Kampala Fish</Badge>
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Why Choose Kampala Fried Fish</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
             Experience the <span className="text-primary">Olusaniya</span> difference
           </h2>

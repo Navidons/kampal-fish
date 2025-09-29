@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Email content for customer care assistant
     const emailContent = `
-      NEW FISH ORDER - KAMPALA FISH (OLUSANIYA)
+      NEW FISH ORDER - KAMPALA FRIED FISH
       
       Order Details:
       - Product: ${productName}
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
       Customer Contact: ${phoneNumber}
       
       ---
-      Kampala Fish (Olusaniya) - Kabusu, Uganda
+      Kampala Fried Fish - Kabusu, Uganda
     `
 
     // In a real application, you would send this email to your customer care team
@@ -81,7 +81,7 @@ async function sendEmailToCustomerCare(content: string, orderData: any) {
   // Example implementation with a service like Resend, SendGrid, etc.
   // const emailService = new EmailService()
   // await emailService.send({
-  //   to: "customercare@kampalafish.com",
+  //   to: "customercare@kampalafriedfish.com",
   //   subject: `New Fish Order - ${orderData.customerName || orderData.phoneNumber}`,
   //   text: content
   // })

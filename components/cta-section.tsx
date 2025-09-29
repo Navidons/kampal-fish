@@ -19,7 +19,7 @@ export function CTASection() {
           Ready to taste the <span className="text-accent-foreground">finest fish</span> in Uganda?
         </h2>
         <p className="text-xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto text-pretty">
-          Join thousands of satisfied customers who trust Kampala Fish for their fresh fish needs. Experience the
+          Join thousands of satisfied customers who trust Kampala Fried Fish for their fresh Olusaniya needs. Experience the
           Olusaniya difference today!
         </p>
 

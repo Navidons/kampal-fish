@@ -16,7 +16,7 @@ export default function Experience() {
               Experience the Olusaniya Difference
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Discover what makes Kampala Fish (Olusaniya) special. From our traditional preparation methods to our
+              Discover what makes Kampala Fried Fish special. From our traditional Olusaniya preparation methods to our
               commitment to customer satisfaction, every aspect is designed to exceed your expectations.
             </p>
           </div>

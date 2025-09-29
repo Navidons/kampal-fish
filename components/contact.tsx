@@ -14,7 +14,7 @@ export function Contact() {
             Ready to order fresh Nile perch & tilapia?
           </h3>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Contact Kampala Fish (Olusaniya) today for fresh fish delivery or visit our location in Kabusu, Uganda
+            Contact Kampala Fried Fish today for our signature Olusaniya (fried fish on large plates) or visit our location in Kabusu, Uganda
           </p>
         </div>
 
@@ -29,11 +29,11 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Kampala Fish (Olusaniya)
+                  Kampala Fried Fish
                   <br />
                   Kabusu Market Area
                   <br />
-                  Wakiso District
+                  Rubaga Division
                   <br />
                   Central Region, Uganda
                 </p>
@@ -87,7 +87,7 @@ export function Contact() {
                 <p className="text-muted-foreground">
                   Monday - Sunday: 09:00am - 12:00pm
                   <br />
-                  <span className="text-sm text-primary font-medium">We sell delicious fried fish on large plates</span>
+                  <span className="text-sm text-primary font-medium">We sell our signature Olusaniya - delicious fried fish on large plates</span>
                   <br />
                   <span className="text-xs text-muted-foreground italic">
                     (Ekyenyanja Ekisiike Ekiwooma Ku Lusaniya)
@@ -144,7 +144,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h5 className="font-semibold text-sm">Fresh Delivery</h5>
-                      <p className="text-xs text-muted-foreground">We deliver fresh fish to your location or pickup</p>
+                      <p className="text-xs text-muted-foreground">We deliver fresh Olusaniya to your location or pickup</p>
                     </div>
                   </div>
                 </div>

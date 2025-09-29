@@ -41,7 +41,7 @@ export function GallerySection() {
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">Visual Gallery</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-            See the <span className="text-primary">Kampala Fish</span> experience
+            See the <span className="text-primary">Kampala Fried Fish</span> experience
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             From our fresh catches to your dining table - witness the quality and care in every step

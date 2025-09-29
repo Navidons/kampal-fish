@@ -14,18 +14,18 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">About Kampala Fish</h2>
+            <h2 className="text-sm font-semibold text-primary mb-4 tracking-wide uppercase">About Kampala Fried Fish</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
               A Ugandan tradition of freshness and <span className="text-primary">quality</span>
             </h3>
             <p className="text-lg text-muted-foreground mb-8 text-pretty">
-              Kampala Fish (Olusaniya) has been proudly serving the Kabusu community and greater Uganda with the
-              freshest fish and exceptional service. We source our fish from Uganda's pristine waters, including Lake
+              Kampala Fried Fish has been proudly serving the Kabusu community and greater Uganda with our
+              signature Olusaniya (fried fish on large plates) and exceptional service. We source our fish from Uganda's pristine waters, including Lake
               Victoria, ensuring the highest quality for our customers.
             </p>
             <p className="text-lg text-muted-foreground text-pretty">
               Our commitment extends beyond just selling fish - we provide a complete dining experience with family
-              tables, traditional Ugandan preparations, and personalized service that celebrates our rich culinary
+              tables, traditional Ugandan Olusaniya preparations, and personalized service that celebrates our rich culinary
               heritage.
             </p>
           </div>
@@ -34,7 +34,7 @@ export function About() {
             <div className="relative group">
               <img
                 src="/kampala-fish-traditional-uganda-preparation.jpg"
-                alt="Kampala Fish traditional preparation"
+                alt="Kampala Fried Fish traditional Olusaniya preparation"
                 className="w-full h-80 object-cover rounded-lg shadow-xl group-hover:shadow-2xl transition-shadow duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg" />

@@ -217,7 +217,7 @@ export default function MenuPage() {
                 </Button>
               </Link>
               <Button variant="outline" size="lg">
-                WhatsApp: +256 XXX XXX XXX
+                WhatsApp: +256 708 923758
               </Button>
             </div>
           </div>

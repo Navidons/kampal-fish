@@ -17,30 +17,33 @@ export function Header() {
               <span className="text-primary-foreground font-bold text-lg md:text-xl">KF</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-bold text-foreground">Kampala Fish</h1>
-              <p className="text-xs text-muted-foreground">Olusaniya • Premium Fish • Uganda</p>
+              <h1 className="text-lg md:text-xl font-bold text-foreground">Kampala Fried Fish</h1>
+              <p className="text-xs text-muted-foreground">Olusaniya • Premium Fried Fish • Uganda</p>
             </div>
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-6">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
+            <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium">
               Home
-            </a>
-            <a href="#products" className="text-foreground hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link href="/#products" className="text-foreground hover:text-primary transition-colors font-medium">
               Products
-            </a>
+            </Link>
             <Link href="/menu" className="text-foreground hover:text-primary transition-colors font-medium">
               Menu
             </Link>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+            <Link href="/#services" className="text-foreground hover:text-primary transition-colors font-medium">
               Services
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link href="/gallery" className="text-foreground hover:text-primary transition-colors font-medium">
+              Gallery
+            </Link>
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
               About
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+            </Link>
+            <Link href="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
               Contact
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-2">
@@ -68,20 +71,20 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-1 mt-4">
-              <a
-                href="#home"
+              <Link
+                href="/"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </a>
-              <a
-                href="#products"
+              </Link>
+              <Link
+                href="/#products"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
-              </a>
+              </Link>
               <Link
                 href="/menu"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
@@ -89,27 +92,34 @@ export function Header() {
               >
                 Menu
               </Link>
-              <a
-                href="#services"
+              <Link
+                href="/#services"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/gallery"
+                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/about"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                href="/contact"
                 className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
               <div className="pt-2">
                 <Link href="/order" onClick={() => setIsMenuOpen(false)}>
                   <Button className="bg-primary hover:bg-primary/90 w-full h-12 text-base font-semibold">

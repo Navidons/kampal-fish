@@ -171,7 +171,7 @@ export default function OrderPage() {
               <Input
                 id="phone"
                 type="tel"
-                placeholder="+256 XXX XXX XXX"
+                placeholder="+256 708 923758"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 required

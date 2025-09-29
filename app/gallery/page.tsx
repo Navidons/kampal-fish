@@ -23,7 +23,7 @@ export default function GalleryPage() {
     {
       src: "/fish-market-kabusu-uganda-kampala-fish-vendor.jpg",
       title: "Our Kabusu Location",
-      description: "Kampala Fish market stall in Kabusu",
+      description: "Kampala Fried Fish market stall in Kabusu",
     },
     {
       src: "/grilled-nile-perch-ugandan-spices-traditional-cook.jpg",
@@ -78,7 +78,7 @@ export default function GalleryPage() {
                 >
                   <div className="relative">
                     <img src={image.src || "/placeholder.svg"} alt={image.title} className="w-full h-64 object-cover" />
-                    <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground">Kampala Fish</Badge>
+                    <Badge className="absolute top-3 left-3 bg-primary/90 text-primary-foreground">Kampala Fried Fish</Badge>
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-foreground mb-2">{image.title}</h3>

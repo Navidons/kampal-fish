@@ -52,7 +52,7 @@ export function Services() {
             Excellence in every <span className="text-primary">aspect</span>
           </h3>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Kampala Fish delivers comprehensive services that go beyond just selling fish - we create memorable
+            Kampala Fried Fish delivers comprehensive services that go beyond just selling fish - we create memorable
             experiences
           </p>
         </div>

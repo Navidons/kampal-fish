@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, MessageCircle } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -11,12 +12,12 @@ export function Footer() {
                 <span className="text-primary-foreground font-bold text-xl">KF</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Kampala Fish</h3>
-                <p className="text-sm text-background/70">Olusaniya • Premium Fish</p>
+                <h3 className="text-xl font-bold">Kampala Fried Fish</h3>
+                <p className="text-sm text-background/70">Olusaniya • Premium Fried Fish</p>
               </div>
             </div>
             <p className="text-background/70 text-pretty mb-6">
-              Your trusted source for fresh, quality fish in Kabusu, Uganda. Serving the community with excellence and
+              Your trusted source for fresh, quality Olusaniya (fried fish on large plates) in Kabusu, Uganda. Serving the community with excellence and
               traditional Ugandan hospitality since 2020.
             </p>
             <div className="flex space-x-4">
@@ -31,29 +32,39 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/" className="text-background/70 hover:text-primary transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#products" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/#products" className="text-background/70 hover:text-primary transition-colors">
                   Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/menu" className="text-background/70 hover:text-primary transition-colors">
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="text-background/70 hover:text-primary transition-colors">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-background/70 hover:text-primary transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/about" className="text-background/70 hover:text-primary transition-colors">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-background/70 hover:text-primary transition-colors">
+                <Link href="/contact" className="text-background/70 hover:text-primary transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -62,7 +73,7 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-6">Our Products</h4>
             <ul className="space-y-3">
               <li>
-                <span className="text-background/70">Fish on Tray (Olusaniya Special)</span>
+                <span className="text-background/70">Olusaniya (Fried Fish on Large Plates)</span>
               </li>
               <li>
                 <span className="text-background/70">Whole Fresh Fish</span>
@@ -87,22 +98,22 @@ export function Footer() {
                 <span className="text-background/70">
                   Kabusu Market Area
                   <br />
-                  Wakiso District
+                  Rubaga Division
                   <br />
                   Central Region, Uganda
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-background/70">+256 XXX XXX XXX</span>
+                <span className="text-background/70">0787 012041 / +256708923758</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="w-5 h-5 text-primary" />
-                <span className="text-background/70">WhatsApp: +256 XXX XXX XXX</span>
+                <span className="text-background/70">WhatsApp: +256 708 923758</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-background/70">info@kampalafish.ug</span>
+                <span className="text-background/70">info@kampalafriedfish.ug</span>
               </div>
             </div>
           </div>
@@ -110,7 +121,7 @@ export function Footer() {
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center">
           <p className="text-background/70">
-            © 2025 Kampala Fish (Olusaniya). All rights reserved. | Proudly serving Kabusu, Uganda with fresh fish
+            © 2025 Kampala Fried Fish. All rights reserved. | Proudly serving Kabusu, Uganda with fresh Olusaniya
             excellence.
           </p>
         </div>

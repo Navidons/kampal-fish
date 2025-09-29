@@ -16,7 +16,7 @@ export default function Excellence() {
               Excellence in Every Aspect
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              At Kampala Fish (Olusaniya), we deliver exceptional quality in every piece of fish we serve. Experience
+              At Kampala Fried Fish, we deliver exceptional quality in every piece of Olusaniya we serve. Experience
               the difference that comes from years of expertise and commitment to freshness.
             </p>
           </div>

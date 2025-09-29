@@ -7,7 +7,7 @@ export function Testimonials() {
       name: "Sarah Nakamura",
       location: "Kabusu Central",
       rating: 5,
-      text: "Kampala Fish has been our family's go-to for fresh fish for over 3 years. The Olusaniya special is absolutely delicious!",
+      text: "Kampala Fried Fish has been our family's go-to for fresh Olusaniya for over 3 years. The Olusaniya special is absolutely delicious!",
       image: "/customer-testimonial-uganda-woman-happy.jpg",
     },
     {
@@ -34,7 +34,7 @@ export function Testimonials() {
             What our <span className="text-primary">customers</span> say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Hear from families across Kabusu who trust Kampala Fish for their dining needs
+            Hear from families across Kabusu who trust Kampala Fried Fish for their dining needs
           </p>
         </div>
 

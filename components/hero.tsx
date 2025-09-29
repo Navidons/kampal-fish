@@ -15,7 +15,7 @@ export function Hero() {
     },
     {
       image: "/grilled-nile-perch-on-wooden-tray-ugandan-style.jpg",
-      title: "Happy Customers Enjoying Olusaniya",
+      title: "Happy Customers Enjoying Our Olusaniya",
       subtitle: "Fresh from our kitchen to your table",
     },
     {
@@ -101,7 +101,7 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            <span className="text-primary">Olusaniya</span> - Kampala Fish
+            <span className="text-primary">Olusaniya</span> - Kampala Fried Fish
             <br />
             <span className="text-accent">Kabusu's Finest</span>
           </h1>

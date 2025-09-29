@@ -16,7 +16,7 @@ export default function HowToOrder() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">How to Order</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Ordering fresh fish from Kampala Fish (Olusaniya) is simple and convenient. Follow these easy steps to get
+              Ordering fresh Olusaniya from Kampala Fried Fish is simple and convenient. Follow these easy steps to get
               delicious fried fish delivered to your location.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function HowToOrder() {
             <div className="space-y-6">
               <Image
                 src="/staff-serving-olusaniya-fish-happy-customers.jpg"
-                alt="How to order from Kampala Fish Olusaniya"
+                alt="How to order from Kampala Fried Fish Olusaniya"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-xl"
@@ -142,11 +142,11 @@ export default function HowToOrder() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Kampala Fish (Olusaniya)
+                    Kampala Fried Fish
                     <br />
                     Kabusu Market Area
                     <br />
-                    Wakiso District, Uganda
+                    Rubaga Division, Uganda
                   </p>
                 </CardContent>
               </Card>
