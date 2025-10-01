@@ -22,12 +22,11 @@ export function Header() {
           {/* Logo Section */}
           <Link href="/" className="flex items-center space-x-2 md:space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <Fish className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full flex items-center justify-center">
-                <Star className="w-2 h-2 md:w-2.5 md:h-2.5 text-white fill-white" />
-              </div>
+              <img 
+                src="/kampala-fried-fish-logo-removed-bg.png" 
+                alt="Kampala Fried Fish Logo" 
+                className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-all duration-300"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -157,24 +158,28 @@ export function Hero() {
 
           {/* Modern CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <Button 
-              size="lg" 
-              className="group relative w-full max-w-sm sm:max-w-none bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center justify-center">
-                Order Now
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Button>
+            <Link href="/order">
+              <Button 
+                size="lg" 
+                className="group relative w-full max-w-sm sm:max-w-none bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  Order Now
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>
+            </Link>
             
-            <Button
-              size="lg"
-              variant="outline"
-              className="group w-full max-w-sm sm:max-w-none border-2 border-white/50 text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-bold rounded-2xl bg-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105"
-            >
-              View Product
-            </Button>
+            <Link href="/#products">
+              <Button
+                size="lg"
+                variant="outline"
+                className="group w-full max-w-sm sm:max-w-none border-2 border-white/50 text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-bold rounded-2xl bg-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105"
+              >
+                View Product
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Swipe Indicator */}

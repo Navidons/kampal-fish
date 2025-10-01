@@ -1,6 +1,10 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Images to convert
 const images = [
@@ -16,8 +20,8 @@ async function convertToWebP() {
   
   for (const image of images) {
     try {
-      const inputPath = path.join('public', image);
-      const outputPath = path.join('public', image.replace(/\.(jpg|jpeg|png)$/i, '.webp'));
+      const inputPath = path.join(__dirname, 'public', image);
+      const outputPath = path.join(__dirname, 'public', image.replace(/\.(jpg|jpeg|png)$/i, '.webp'));
       
       // Check if input file exists
       if (!fs.existsSync(inputPath)) {

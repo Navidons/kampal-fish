@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/check-dependencies.mjs && node scripts/build-setup.mjs",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "convert-webp": "node convert-to-webp.mjs",
+    "optimize-images": "npm run convert-webp",
+    "generate-pwa-icons": "node generate-pwa-icons.mjs",
+    "setup-pwa": "npm run generate-pwa-icons && npm run convert-webp"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

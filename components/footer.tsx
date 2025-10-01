@@ -8,9 +8,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-primary-foreground font-bold text-xl">KF</span>
-              </div>
+              <img 
+                src="/kampala-fried-fish-logo-removed-bg.png" 
+                alt="Kampala Fried Fish Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <div>
                 <h3 className="text-xl font-bold">Kampala Fried Fish</h3>
                 <p className="text-sm text-background/70">Olusaniya • Premium Fried Fish</p>
