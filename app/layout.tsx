@@ -8,13 +8,48 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ContactFormButton } from "@/components/contact-form-button"
 import { InstallPrompt } from "@/components/install-prompt"
 import { PWARegistration } from "@/components/pwa-registration"
+import { StructuredData } from "@/components/structured-data"
+import { SEOHead } from "@/components/seo-head"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Kampala Fried Fish - Premium Olusaniya | Kabusu",
-  description:
-    "Premium Olusaniya (fried fish on large plates) delivery in Kabusu. Fresh fish, whole and parts. Family tables available. Order online for fast delivery.",
-  generator: "v0.app",
+  title: {
+    default: "Kampala Fried Fish - Best Olusaniya in Kampala | Kabusu Market",
+    template: "%s | Kampala Fried Fish - Best Olusaniya in Kampala"
+  },
+  description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division. Fresh fish, authentic Ugandan spices, family dining since 2018. Order now!",
+  keywords: [
+    "fried fish kampala",
+    "olusaniya kampala",
+    "nile perch kampala",
+    "fish delivery kampala",
+    "kabusu fish market",
+    "rubaga fish restaurant",
+    "best fried fish in kampala",
+    "kampala fish takeaway",
+    "uganda fish restaurant",
+    "kampala fish delivery"
+  ],
+  authors: [{ name: "Kampala Fried Fish" }],
+  creator: "Kampala Fried Fish",
+  publisher: "Kampala Fried Fish",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://kampalafriedfish.ug",
+  },
+  category: "Food & Restaurant",
+  classification: "Restaurant",
+  generator: "Next.js",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -26,9 +61,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_UG",
+    url: "https://kampalafriedfish.ug",
     siteName: "Kampala Fried Fish",
-    title: "Kampala Fried Fish - Premium Olusaniya",
-    description: "Premium Olusaniya (fried fish on large plates) delivery in Kabusu",
+    title: "Kampala Fried Fish - Best Olusaniya in Kampala | Kabusu Market",
+    description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division. Fresh fish, authentic Ugandan spices, family dining since 2018.",
+    images: [
+      {
+        url: "/fish-plate-square.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kampala Fried Fish - Premium Olusaniya",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kampala Fried Fish - Best Olusaniya in Kampala",
+    description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division.",
+    images: ["/fish-plate-square.webp"],
+    creator: "@kampalafriedfish",
   },
   icons: {
     icon: [
@@ -38,6 +90,11 @@ export const metadata: Metadata = {
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
+  },
+  verification: {
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
   },
 }
 
@@ -73,6 +130,8 @@ export default function RootLayout({
         <WhatsAppButton />
         <InstallPrompt />
         <PWARegistration />
+        <StructuredData />
+        <SEOHead />
         <Analytics />
       </body>
     </html>

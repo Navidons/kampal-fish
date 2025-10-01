@@ -90,6 +90,7 @@ export function Hero() {
             style={{
               backgroundImage: `url('${slide.image}')`,
             }}
+            aria-label={`${slide.title} - Best Fried Fish in Kampala, Olusaniya, Nile Perch, Kabusu Market, Rubaga Division`}
           />
         ))}
       </div>
@@ -143,17 +144,17 @@ export function Hero() {
           {/* Modern Title with Gradient */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-balance leading-tight">
             <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
-              Empuuta ku Lusaniya
+              Best Fried Fish in Kampala
             </span>
             <br />
             <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-              Nile Perch on Massive Plates
+              Premium Olusaniya - Nile Perch on Massive Plates
             </span>
           </h1>
 
           {/* Dynamic Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto text-pretty px-4">
-            {heroImages[currentSlide].subtitle}
+            {heroImages[currentSlide].subtitle} - Kabusu Market, Rubaga Division
           </p>
 
           {/* Modern CTA Buttons */}

@@ -24,8 +24,10 @@ export function Header() {
             <div className="relative">
               <img 
                 src="/kampala-fried-fish-logo-removed-bg.png" 
-                alt="Kampala Fried Fish Logo" 
+                alt="Kampala Fried Fish Logo - Best Fried Fish in Kampala, Olusaniya, Nile Perch, Kabusu Market, Rubaga Division" 
                 className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-all duration-300"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             <div className="hidden sm:block">

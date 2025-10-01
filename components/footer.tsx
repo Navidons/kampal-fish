@@ -10,8 +10,10 @@ export function Footer() {
             <div className="flex items-center space-x-3 mb-6">
               <img 
                 src="/kampala-fried-fish-logo-removed-bg.png" 
-                alt="Kampala Fried Fish Logo" 
+                alt="Kampala Fried Fish Logo - Best Fried Fish in Kampala, Olusaniya, Nile Perch, Kabusu Market, Rubaga Division" 
                 className="w-12 h-12 object-contain"
+                loading="lazy"
+                fetchPriority="low"
               />
               <div>
                 <h3 className="text-xl font-bold">Kampala Fried Fish</h3>

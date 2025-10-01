@@ -8,7 +8,7 @@ export function Products() {
   const products = [
     {
       name: "Small Lusaniya",
-      description: "Perfect for 1-2 people. Nile Perch on massive plates, fried to perfection.",
+      description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
       price: "UGX 18,000",
       image: "/fish-plate-square.webp",
       popular: true,
@@ -18,7 +18,7 @@ export function Products() {
     },
     {
       name: "Medium Lusaniya",
-      description: "Ideal for 3-4 people. Generous portions of golden fried Nile Perch.",
+      description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
       price: "UGX 28,000",
       image: "/hot-fish-rack-landscape.webp",
       popular: true,
@@ -28,7 +28,7 @@ export function Products() {
     },
     {
       name: "Large Lusaniya",
-      description: "Perfect for families and groups. Massive plates of crispy fried Nile Perch.",
+      description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
       price: "UGX 38,000",
       image: "/spiced-fish-plate-square.webp",
       popular: true,
@@ -52,10 +52,10 @@ export function Products() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 text-balance">
-            Empuuta ku Lusaniya
+            Best Fried Fish in Kampala - Empuuta ku Lusaniya
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Nile Perch on massive plates, fried to perfection
+            Premium Nile Perch on massive plates, fried to perfection with authentic Ugandan spices in Kabusu Market, Rubaga Division
           </p>
         </div>
 
@@ -83,8 +83,10 @@ export function Products() {
               <div className="relative overflow-hidden">
                 <img
                   src={product.image || "/placeholder.svg"}
-                  alt={product.name}
+                  alt={`${product.name} - Best Fried Fish in Kampala, Olusaniya, Nile Perch, Kabusu Market, Rubaga Division - ${product.description}`}
                   className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
