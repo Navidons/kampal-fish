@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -11,24 +11,24 @@ export function Hero() {
 
   const heroImages = [
     {
-      image: "/fried-fish-golden-brown-nigerian-cuisine.jpg",
-      title: "Golden Fried Fish Perfection",
-      subtitle: "Crispy, creamy, and delicious",
+      image: "/fish-plate-square.jpg",
+      title: "Empuuta ku Lusaniya",
+      subtitle: "Nile Perch on massive plates",
     },
     {
-      image: "/grilled-nile-perch-on-wooden-tray-ugandan-style.jpg",
-      title: "Happy Customers Enjoying Our Olusaniya",
-      subtitle: "Fresh from our kitchen to your table",
+      image: "/hot-fish-rack-landscape.jpg",
+      title: "Fried to Perfection",
+      subtitle: "Golden crispy exterior",
     },
     {
-      image: "/fried-tilapia-golden-brown-ugandan-cuisine-traditi.jpg",
-      title: "Traditional Ugandan Fish Preparation",
-      subtitle: "Served with love in Kabusu",
+      image: "/hot-spice-fish-rack-portrait.jpg",
+      title: "Authentic Spices",
+      subtitle: "Traditional Ugandan flavors",
     },
     {
-      image: "/mixed-fish-platter-nile-perch-tilapia-ugandan-feas.jpg",
-      title: "Family Feast Experience",
-      subtitle: "Bringing families together",
+      image: "/spiced-fish-plate-square.jpg",
+      title: "Family Experience",
+      subtitle: "Perfect for sharing",
     },
   ]
 
@@ -73,18 +73,18 @@ export function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-section"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Background Image Carousel */}
+      {/* Enhanced Background with Smooth Transitions */}
       <div className="absolute inset-0">
         {heroImages.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ${
+              index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"
             }`}
             style={{
               backgroundImage: `url('${slide.image}')`,
@@ -93,81 +93,96 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      {/* Modern Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 via-transparent to-transparent" />
 
-      {/* Navigation Arrows - Hidden on mobile */}
+      {/* Enhanced Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all"
+        className="hidden md:block absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 border border-white/20 hover:scale-110"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all"
+        className="hidden md:block absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 border border-white/20 hover:scale-110"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+      {/* Enhanced Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${index === currentSlide ? "bg-orange-500" : "bg-white/50"}`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? "bg-orange-500 scale-125 shadow-lg shadow-orange-500/50" 
+                : "bg-white/50 hover:bg-white/70"
+            }`}
           />
         ))}
       </div>
 
-      {/* Content */}
+      {/* Main Content with Modern Design */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          {/* Mobile-first design */}
-          <div className="flex items-center justify-center space-x-1 mb-4 md:mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-orange-500 text-orange-500" />
-            ))}
-            <span className="ml-2 text-xs md:text-sm font-medium">Premium Quality Since 2020</span>
+          {/* Rating Badge */}
+          <div className="flex items-center justify-center space-x-2 mb-6">
+            <div className="flex items-center space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+              ))}
+              <span className="ml-2 text-sm font-medium">Since 2018</span>
+            </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-balance leading-tight">
-            <span className="text-orange-500">Olusaniya</span>
-            <br className="md:hidden" />
-            <span className="hidden md:inline"> - </span>
-            <br className="md:hidden" />
-            Kampala Fried Fish
+          {/* Modern Title with Gradient */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-balance leading-tight">
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+              Empuuta ku Lusaniya
+            </span>
             <br />
-            <span className="text-orange-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Kabusu's Finest</span>
+            <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+              Nile Perch on Massive Plates
+            </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-200 max-w-3xl mx-auto text-pretty px-2">
-            {heroImages[currentSlide].subtitle} - Experience the authentic taste of Uganda's premium Nile perch and
-            tilapia, served fresh daily in Kabusu.
+          {/* Dynamic Subtitle */}
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto text-pretty px-4">
+            {heroImages[currentSlide].subtitle}
           </p>
 
-          {/* Mobile-optimized buttons */}
-          <div className="flex flex-col gap-3 md:gap-4 justify-center items-center px-4">
+          {/* Modern CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
             <Button 
               size="lg" 
-              className="w-full max-w-sm md:max-w-none bg-orange-500 hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative w-full max-w-sm sm:max-w-none bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
             >
-              Order Fresh Fish
-              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
+              <span className="relative z-10 flex items-center justify-center">
+                Order Now
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Button>
+            
             <Button
               size="lg"
               variant="outline"
-              className="w-full max-w-sm md:max-w-none border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl bg-transparent transition-all duration-300"
+              className="group w-full max-w-sm sm:max-w-none border-2 border-white/50 text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-bold rounded-2xl bg-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105"
             >
-              View Menu
+              View Product
             </Button>
           </div>
 
-          {/* Mobile touch indicators */}
-          <div className="md:hidden mt-6 text-center">
-            <p className="text-xs text-gray-300">Swipe to see more</p>
+          {/* Mobile Swipe Indicator */}
+          <div className="md:hidden mt-8 text-center">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
+              <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" />
+              <span className="text-xs text-gray-300">Swipe to explore</span>
+            </div>
           </div>
         </div>
       </div>

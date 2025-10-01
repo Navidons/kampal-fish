@@ -1,10 +1,71 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Clock, Mail, MessageCircle, Fish } from "lucide-react"
+import { useState } from "react"
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    fishType: "",
+    message: ""
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!formData.phoneNumber || !formData.message) return
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phoneNumber: formData.phoneNumber,
+          inquiry: formData.message,
+          name: formData.name,
+          email: formData.email,
+          fishType: formData.fishType
+        }),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          name: "",
+          phoneNumber: "",
+          email: "",
+          fishType: "",
+          message: ""
+        })
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 5000)
+      }
+    } catch (error) {
+      console.error("Contact form submission failed:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4">
@@ -164,24 +225,70 @@ export function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Your Name (Optional)" className="focus:ring-2 focus:ring-primary/20" />
-                  <Input placeholder="Phone Number *" className="focus:ring-2 focus:ring-primary/20" required />
-                </div>
-                <Input placeholder="Email Address (Optional)" className="focus:ring-2 focus:ring-primary/20" />
-                <Input placeholder="Fish Type & Quantity Needed (Optional)" className="focus:ring-2 focus:ring-primary/20" />
-                <Textarea
-                  placeholder="Your message or specific requirements... *"
-                  rows={4}
-                  className="focus:ring-2 focus:ring-primary/20"
-                  required
-                />
-                <Button className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300">
-                  Send Order Inquiry
-                </Button>
-                <p className="text-xs text-center text-muted-foreground">
-                  * Required fields. We'll respond with availability and send email confirmation
-                </p>
+                {isSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-8 h-8 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Message Sent!</h3>
+                    <p className="text-muted-foreground text-sm">
+                      We'll get back to you within 30 minutes.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Input 
+                        name="name"
+                        placeholder="Your Name (Optional)" 
+                        className="focus:ring-2 focus:ring-primary/20"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                      />
+                      <Input 
+                        name="phoneNumber"
+                        placeholder="Phone Number *" 
+                        className="focus:ring-2 focus:ring-primary/20" 
+                        required 
+                        value={formData.phoneNumber}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <Input 
+                      name="email"
+                      placeholder="Email Address (Optional)" 
+                      className="focus:ring-2 focus:ring-primary/20"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                    />
+                    <Input 
+                      name="fishType"
+                      placeholder="Fish Type & Quantity Needed (Optional)" 
+                      className="focus:ring-2 focus:ring-primary/20"
+                      value={formData.fishType}
+                      onChange={handleInputChange}
+                    />
+                    <Textarea
+                      name="message"
+                      placeholder="Your message or specific requirements... *"
+                      rows={4}
+                      className="focus:ring-2 focus:ring-primary/20"
+                      required
+                      value={formData.message}
+                      onChange={handleInputChange}
+                    />
+                    <Button 
+                      type="submit"
+                      disabled={!formData.phoneNumber || !formData.message || isSubmitting}
+                      className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Order Inquiry"}
+                    </Button>
+                    <p className="text-xs text-center text-muted-foreground">
+                      * Required fields. We'll respond with availability and send email confirmation
+                    </p>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>

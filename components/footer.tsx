@@ -18,7 +18,7 @@ export function Footer() {
             </div>
             <p className="text-background/70 text-pretty mb-6">
               Your trusted source for fresh, quality Olusaniya (fried fish on large plates) in Kabusu, Uganda. Serving the community with excellence and
-              traditional Ugandan hospitality since 2020.
+              traditional Ugandan hospitality since 2018.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-background/70 hover:text-primary cursor-pointer transition-colors" />
@@ -42,21 +42,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="text-background/70 hover:text-primary transition-colors">
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="text-background/70 hover:text-primary transition-colors">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="text-background/70 hover:text-primary transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="text-background/70 hover:text-primary transition-colors">
                   About
                 </Link>
@@ -70,22 +55,22 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Our Products</h4>
+            <h4 className="text-lg font-semibold mb-6">Our Product</h4>
             <ul className="space-y-3">
               <li>
-                <span className="text-background/70">Olusaniya (Fried Fish on Large Plates)</span>
+                <span className="text-background/70">Empuuta ku Lusaniya</span>
               </li>
               <li>
-                <span className="text-background/70">Whole Fresh Fish</span>
+                <span className="text-background/70">Nile Perch on Massive Plates</span>
               </li>
               <li>
-                <span className="text-background/70">Fish Parts & Portions</span>
+                <span className="text-background/70">Fried to Perfection</span>
               </li>
               <li>
-                <span className="text-background/70">Fried Fish Special</span>
+                <span className="text-background/70">Authentic Ugandan Spices</span>
               </li>
               <li>
-                <span className="text-background/70">Family Dining Tables</span>
+                <span className="text-background/70">Family Dining Experience</span>
               </li>
             </ul>
           </div>

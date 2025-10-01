@@ -7,91 +7,55 @@ import Link from "next/link"
 export function Products() {
   const products = [
     {
-      name: "Creamy Fried Nile Perch (Olusaniya Special)",
-      description: "Our signature golden-brown fried Nile perch with creamy texture and authentic Ugandan spices",
-      sizes: [
-        { name: "Small (1-2kg)", price: "UGX 18,000" },
-        { name: "Medium (2-3kg)", price: "UGX 28,000" },
-        { name: "Large (3-4kg)", price: "UGX 38,000" },
-        { name: "Family (4kg+)", price: "UGX 48,000" },
-      ],
-      image: "/fried-fish-golden-brown-nigerian-cuisine.jpg",
+      name: "Small Lusaniya",
+      description: "Perfect for 1-2 people. Nile Perch on massive plates, fried to perfection.",
+      price: "UGX 18,000",
+      image: "/fish-plate-square.jpg",
       popular: true,
       fishType: "Nile Perch",
+      serving: "1-2 People",
+      icon: "👥",
     },
     {
-      name: "Golden Fried Tilapia Whole",
-      description: "Perfectly fried whole tilapia with crispy exterior and tender, creamy interior",
-      sizes: [
-        { name: "Small (500g-1kg)", price: "UGX 12,000" },
-        { name: "Medium (1-2kg)", price: "UGX 18,000" },
-        { name: "Large (2-3kg)", price: "UGX 25,000" },
-      ],
-      image: "/fried-tilapia-golden-brown-ugandan-cuisine-traditi.jpg",
+      name: "Medium Lusaniya",
+      description: "Ideal for 3-4 people. Generous portions of golden fried Nile Perch.",
+      price: "UGX 28,000",
+      image: "/hot-fish-rack-landscape.jpg",
       popular: true,
-      fishType: "Tilapia",
-    },
-    {
-      name: "Fried Fish Pieces (Mixed)",
-      description: "Assorted fried fish pieces - perfect for sharing, golden and creamy texture",
-      sizes: [
-        { name: "Small Pack (1kg)", price: "UGX 15,000" },
-        { name: "Medium Pack (2kg)", price: "UGX 28,000" },
-        { name: "Large Pack (3kg)", price: "UGX 40,000" },
-        { name: "Party Pack (5kg)", price: "UGX 65,000" },
-      ],
-      image: "/mixed-fish-platter-nile-perch-tilapia-ugandan-feas.jpg",
-      popular: true,
-      fishType: "Mixed",
-    },
-    {
-      name: "Fresh Nile Perch (Unfried)",
-      description: "Premium fresh Nile perch for home cooking - cleaned and ready",
-      sizes: [
-        { name: "Small (1-2kg)", price: "UGX 15,000" },
-        { name: "Medium (2-3kg)", price: "UGX 22,000" },
-        { name: "Large (3-4kg)", price: "UGX 30,000" },
-      ],
-      image: "/nile-perch-fillets-cuts-professional-food-photogra.jpg",
-      popular: false,
       fishType: "Nile Perch",
+      serving: "3-4 People",
+      icon: "👨‍👩‍👧",
     },
     {
-      name: "Fresh Tilapia (Unfried)",
-      description: "Lake Victoria fresh tilapia, perfect for traditional cooking methods",
-      sizes: [
-        { name: "Small (500g-1kg)", price: "UGX 8,000" },
-        { name: "Medium (1-2kg)", price: "UGX 14,000" },
-        { name: "Large (2-3kg)", price: "UGX 20,000" },
-      ],
-      image: "/fresh-whole-tilapia-fish-lake-victoria-uganda.jpg",
-      popular: false,
-      fishType: "Tilapia",
+      name: "Large Lusaniya",
+      description: "Perfect for families and groups. Massive plates of crispy fried Nile Perch.",
+      price: "UGX 38,000",
+      image: "/spiced-fish-plate-square.jpg",
+      popular: true,
+      fishType: "Nile Perch",
+      serving: "5+ People",
+      icon: "👨‍👩‍👧‍👦",
     },
-    {
-      name: "Smoked Fish Selection",
-      description: "Traditional smoked fish with authentic Ugandan preservation methods",
-      sizes: [
-        { name: "250g Pack", price: "UGX 12,000" },
-        { name: "500g Pack", price: "UGX 22,000" },
-        { name: "1kg Pack", price: "UGX 40,000" },
-      ],
-      image: "/smoked-fish-traditional-ugandan-preservation-nile-.jpg",
-      popular: false,
-      fishType: "Mixed",
-    },
+  ]
+
+  const customOrders = [
+    { weight: "1/2 kg", price: "UGX 8,000" },
+    { weight: "1 kg", price: "UGX 12,000" },
+    { weight: "2 kg", price: "UGX 22,000" },
+    { weight: "4 kg", price: "UGX 42,000" },
+    { weight: "6 kg", price: "UGX 60,000" },
+    { weight: "8 kg", price: "UGX 75,000" },
   ]
 
   return (
     <section id="products" className="py-12 md:py-20 bg-gradient-to-b from-orange-50/30 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-sm font-semibold text-primary mb-2 md:mb-4 tracking-wide uppercase">Our Products</h2>
-          <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 text-balance">
-            Premium Fried & Fresh Fish
-          </h3>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 text-balance">
+            Empuuta ku Lusaniya
+          </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Specializing in creamy, golden fried fish and fresh selections from Lake Victoria
+            Nile Perch on massive plates, fried to perfection
           </p>
         </div>
 
@@ -99,110 +63,136 @@ export function Products() {
           <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 px-4 -mx-4 md:px-0 md:mx-0 md:overflow-visible md:flex-wrap">
             <Badge variant="outline" className="px-3 py-2 text-xs md:text-sm bg-primary/10 whitespace-nowrap">
               <Fish className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
-              All Fish Types
+              Nile Perch
             </Badge>
             <Badge variant="outline" className="px-3 py-2 text-xs md:text-sm whitespace-nowrap">
-              Fried Fish
+              Massive Plates
             </Badge>
             <Badge variant="outline" className="px-3 py-2 text-xs md:text-sm whitespace-nowrap">
-              Fresh Fish
-            </Badge>
-            <Badge variant="outline" className="px-3 py-2 text-xs md:text-sm whitespace-nowrap">
-              Smoked Fish
+              Fried to Perfection
             </Badge>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
           {products.map((product, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm"
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-0 shadow-lg"
             >
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
-                  className="w-full h-48 sm:h-40 md:h-48 object-cover"
+                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                
                 {product.popular && (
-                  <Badge className="absolute top-2 md:top-3 left-2 md:left-3 bg-orange-500 text-white text-xs">
-                    <Star className="w-3 h-3 mr-1" />
+                  <Badge className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold px-3 py-1 shadow-lg">
+                    <Star className="w-3 h-3 mr-1 fill-white" />
                     Popular
                   </Badge>
                 )}
-                <Badge variant="secondary" className="absolute top-2 md:top-3 right-2 md:right-3 text-xs">
-                  {product.fishType}
-                </Badge>
+                
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center space-x-2 text-white">
+                    <span className="text-2xl">{product.icon}</span>
+                    <span className="text-sm font-medium bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">
+                      {product.serving}
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <CardHeader className="p-4 md:p-6">
-                <CardTitle className="text-base md:text-lg text-balance">{product.name}</CardTitle>
-                <p className="text-sm text-muted-foreground text-pretty">{product.description}</p>
+              <CardHeader className="p-6 pb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                    {product.name}
+                  </CardTitle>
+                  <Badge variant="outline" className="text-xs border-orange-200 text-orange-600">
+                    {product.fishType}
+                  </Badge>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{product.description}</p>
               </CardHeader>
 
-              <CardContent className="p-4 md:p-6 pt-0">
-                <div className="mb-4">
-                  <p className="text-sm text-muted-foreground mb-3">Pricing Tiers:</p>
-                  <div className="space-y-2">
-                    {product.sizes.map((size, sizeIndex) => (
-                      <div
-                        key={sizeIndex}
-                        className="flex justify-between items-center p-2 md:p-3 bg-gray-50 rounded-lg"
-                      >
-                        <span className="text-xs md:text-sm font-medium">{size.name}</span>
-                        <span className="text-xs md:text-sm font-bold text-orange-600">{size.price}</span>
+              <CardContent className="p-6 pt-0">
+                <div className="mb-6">
+                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-4 border border-orange-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-gray-600 mb-1">Price</p>
+                        <p className="text-2xl font-bold text-orange-600">{product.price}</p>
                       </div>
-                    ))}
+                      <div className="text-right">
+                        <p className="text-sm text-gray-600 mb-1">Serves</p>
+                        <p className="text-lg font-semibold text-gray-800">{product.serving}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center">
-                  <Link
-                    href={`/order?product=${encodeURIComponent(product.name)}&type=${product.fishType}`}
-                    className="w-full"
-                  >
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600 h-12 md:h-10 text-sm md:text-base font-semibold rounded-lg">
-                      <ShoppingCart className="w-4 h-4 mr-2" />
-                      Order Now
-                    </Button>
-                  </Link>
-                </div>
+                <Link
+                  href={`/order?product=${encodeURIComponent(product.name)}&price=${product.price}`}
+                  className="w-full block"
+                >
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white h-12 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                    <ShoppingCart className="w-5 h-5 mr-2" />
+                    Order {product.name}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
         </div>
 
+        {/* Custom Orders Section */}
+        <div className="text-center mb-8">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">Custom Orders</h3>
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto mb-6">
+            Need a specific weight? Order any quantity you need
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          {customOrders.map((order, index) => (
+            <Card key={index} className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
+              <div className="space-y-2">
+                <h4 className="font-semibold text-foreground">{order.weight}</h4>
+                <p className="text-orange-600 font-bold">{order.price}</p>
+                <Link href={`/order?weight=${order.weight}&price=${order.price}`}>
+                  <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs">
+                    Order
+                  </Button>
+                </Link>
+              </div>
+            </Card>
+          ))}
+        </div>
+
         <div className="mt-12 md:mt-16 text-center">
-          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-orange-50 to-orange-100/50 border-orange-200">
+          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-orange-50 to-orange-100/50 border-orange-200">
             <CardContent className="p-6 md:p-8">
-              <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4 md:mb-6">How to Order</h4>
-              <p className="text-muted-foreground text-base md:text-lg mb-6">
-                We handle all orders through direct communication for the freshest fish experience
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center">
-                <div className="space-y-3">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
-                    <span className="text-orange-600 font-bold text-lg">1</span>
+              <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4">How to Order</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div className="space-y-2">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-orange-600 font-bold">1</span>
                   </div>
-                  <h5 className="font-semibold text-base">Contact Us</h5>
-                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">Call, WhatsApp, or visit our location</p>
+                  <h5 className="font-semibold text-sm">Contact</h5>
                 </div>
-                <div className="space-y-3">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
-                    <span className="text-orange-600 font-bold text-lg">2</span>
+                <div className="space-y-2">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-orange-600 font-bold">2</span>
                   </div>
-                  <h5 className="font-semibold text-base">Select & Confirm</h5>
-                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">
-                    Choose your fish and receive email confirmation
-                  </p>
+                  <h5 className="font-semibold text-sm">Confirm</h5>
                 </div>
-                <div className="space-y-3">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
-                    <span className="text-orange-600 font-bold text-lg">3</span>
+                <div className="space-y-2">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-orange-600 font-bold">3</span>
                   </div>
-                  <h5 className="font-semibold text-base">Fresh Delivery</h5>
-                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">We deliver fresh to your location</p>
+                  <h5 className="font-semibold text-sm">Deliver</h5>
                 </div>
               </div>
             </CardContent>
