@@ -11,22 +11,22 @@ export function Hero() {
 
   const heroImages = [
     {
-      image: "/fish-plate-square.jpg",
+      image: "/fish-plate-square.webp",
       title: "Empuuta ku Lusaniya",
       subtitle: "Nile Perch on massive plates",
     },
     {
-      image: "/hot-fish-rack-landscape.jpg",
+      image: "/hot-fish-rack-landscape.webp",
       title: "Fried to Perfection",
       subtitle: "Golden crispy exterior",
     },
     {
-      image: "/hot-spice-fish-rack-portrait.jpg",
+      image: "/hot-spice-fish-rack-portrait.webp",
       title: "Authentic Spices",
       subtitle: "Traditional Ugandan flavors",
     },
     {
-      image: "/spiced-fish-plate-square.jpg",
+      image: "/spiced-fish-plate-square.webp",
       title: "Family Experience",
       subtitle: "Perfect for sharing",
     },

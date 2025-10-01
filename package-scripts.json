@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "convert-webp": "node convert-to-webp.js",
+    "optimize-images": "npm run convert-webp"
+  }
+}
