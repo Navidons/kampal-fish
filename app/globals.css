@@ -357,4 +357,38 @@
     max-height: 80vh;
     overflow-y: auto;
   }
+
+  /* Bottom navigation spacing */
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* Enhanced mobile performance */
+@media (max-width: 768px) {
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Better touch targets */
+  button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improved scrolling performance */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better image loading */
+  img {
+    content-visibility: auto;
+  }
 }

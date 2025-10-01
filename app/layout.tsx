@@ -10,6 +10,9 @@ import { InstallPrompt } from "@/components/install-prompt"
 import { PWARegistration } from "@/components/pwa-registration"
 import { StructuredData } from "@/components/structured-data"
 import { SEOHead } from "@/components/seo-head"
+import { MobileBottomNav } from "@/components/mobile-bottom-nav"
+import { FAQSchema } from "@/components/faq-schema"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -154,6 +157,9 @@ export default function RootLayout({
         <PWARegistration />
         <StructuredData />
         <SEOHead />
+        <MobileBottomNav />
+        <FAQSchema />
+        <BreadcrumbNav />
         <Analytics />
       </body>
     </html>

@@ -33,9 +33,11 @@ export function About() {
           <div className="space-y-6">
             <div className="relative group">
               <img
-                src="/kampala-fish-traditional-uganda-preparation.jpg"
-                alt="Kampala Fried Fish traditional Olusaniya preparation"
+                src="/frying-fish-landscape.jpg"
+                alt="Kampala Fried Fish traditional Olusaniya preparation - Fresh fish being deep-fried to perfection in Kabusu Market, Rubaga Division"
                 className="w-full h-80 object-cover rounded-lg shadow-xl group-hover:shadow-2xl transition-shadow duration-300"
+                loading="lazy"
+                fetchPriority="low"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg" />
             </div>

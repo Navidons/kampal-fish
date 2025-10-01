@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, Star, Fish } from "lucide-react"
 import Link from "next/link"
+import { IntersectionObserver } from "@/components/intersection-observer"
 
 export function Products() {
   const products = [
@@ -76,10 +77,8 @@ export function Products() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
           {products.map((product, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-0 shadow-lg"
-            >
+            <IntersectionObserver key={index} threshold={0.2}>
+              <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
                   src={product.image || "/placeholder.svg"}
@@ -145,7 +144,8 @@ export function Products() {
                   </Button>
                 </Link>
               </CardContent>
-            </Card>
+              </Card>
+            </IntersectionObserver>
           ))}
         </div>
 
