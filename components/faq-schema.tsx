@@ -45,7 +45,7 @@ export function FAQSchema() {
           "name": "What are your operating hours?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We are open daily from 8:00 AM to 10:00 PM, seven days a week. We serve fresh fish throughout the day to ensure you get the best quality."
+            "text": "We are open daily from early morning to midnight, seven days a week. We serve fresh fish throughout the day to ensure you get the best quality."
           }
         },
         {

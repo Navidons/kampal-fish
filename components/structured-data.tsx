@@ -33,7 +33,7 @@ export function StructuredData() {
         "latitude": "0.3163",
         "longitude": "32.5822"
       },
-      "openingHours": "Mo-Su 08:00-22:00",
+      "openingHours": "Mo-Su 06:00-24:00",
       "priceRange": "$$",
       "servesCuisine": ["Ugandan", "African", "Seafood"],
       "hasMenu": "https://kampalafriedfish.ug/#products",

@@ -30,8 +30,7 @@ export default function HowToOrder() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Choose Your Contact Method</h3>
                   <p className="text-muted-foreground mb-4">
-                    Contact us through phone, WhatsApp, or visit our location in Kabusu. We're available from 09:00am -
-                    12:00pm, Monday to Sunday.
+                    Contact us through phone, WhatsApp, or visit our location in Kabusu. We're available from early morning to midnight, Monday to Sunday.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Card className="border-primary/20">
@@ -125,7 +124,7 @@ export default function HowToOrder() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg font-semibold text-foreground mb-2">09:00am - 12:00pm</p>
+                  <p className="text-lg font-semibold text-foreground mb-2">Early Morning - Midnight</p>
                   <p className="text-muted-foreground mb-4">Monday - Sunday</p>
                   <p className="text-sm text-muted-foreground">
                     We sell delicious fried fish on large plates (Ekyenyanja Ekisiike Ekiwooma Ku Lusaniya)

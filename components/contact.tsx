@@ -146,7 +146,7 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Monday - Sunday: 09:00am - 12:00pm
+                  Monday - Sunday: Early Morning - Midnight
                   <br />
                   <span className="text-sm text-primary font-medium">We sell our signature Olusaniya - delicious fried fish on large plates</span>
                   <br />

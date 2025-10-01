@@ -133,7 +133,7 @@ export default function AboutPage() {
                       <h4 className="font-semibold mb-2">Operating Hours</h4>
                       <p className="text-muted-foreground">
                         Monday - Sunday<br />
-                        09:00am - 12:00pm<br />
+                        Early Morning - Midnight<br />
                         <span className="text-sm text-primary font-medium">
                           We sell our signature Olusaniya - delicious fried fish on large plates
                         </span>
