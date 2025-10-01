@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 
 // Gmail SMTP configuration
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   port: 587,
@@ -16,10 +16,8 @@ const transporter = nodemailer.createTransporter({
 export const verifyEmailConnection = async () => {
   try {
     await transporter.verify()
-    console.log('✅ Gmail SMTP connection verified successfully')
     return true
   } catch (error) {
-    console.error('❌ Gmail SMTP connection failed:', error)
     return false
   }
 }
@@ -44,10 +42,8 @@ export const sendEmail = async (options: {
     }
 
     const result = await transporter.sendMail(mailOptions)
-    console.log('✅ Email sent successfully:', result.messageId)
     return { success: true, messageId: result.messageId }
   } catch (error) {
-    console.error('❌ Email sending failed:', error)
     return { success: false, error: error }
   }
 }

@@ -58,13 +58,13 @@ export function ContactFormButton() {
       {/* Floating Contact Form Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 z-50 bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+        className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-50 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-3 md:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group touch-target"
         aria-label="Contact us via form"
       >
-        <Mail className="w-6 h-6" />
+        <Mail className="w-5 h-5 md:w-6 md:h-6" />
         
-        {/* Tooltip */}
-        <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        {/* Tooltip - Hidden on mobile */}
+        <div className="hidden md:block absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
           Quick Contact
           <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
         </div>
@@ -72,9 +72,9 @@ export function ContactFormButton() {
 
       {/* Contact Form Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 mobile-modal">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto mobile-content">
+            <div className="p-4 md:p-6">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-foreground">Quick Contact</h2>
@@ -113,7 +113,7 @@ export function ContactFormButton() {
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
                       required
-                      className="mt-1"
+                      className="mt-1 mobile-input"
                     />
                   </div>
 
@@ -129,7 +129,7 @@ export function ContactFormButton() {
                       onChange={handleInputChange}
                       required
                       rows={4}
-                      className="mt-1 resize-none"
+                      className="mt-1 resize-none mobile-input"
                     />
                   </div>
 
@@ -147,14 +147,14 @@ export function ContactFormButton() {
                       type="button"
                       variant="outline"
                       onClick={() => setIsOpen(false)}
-                      className="flex-1"
+                      className="flex-1 mobile-btn"
                     >
                       Cancel
                     </Button>
                     <Button
                       type="submit"
                       disabled={!formData.phoneNumber || !formData.inquiry || isSubmitting}
-                      className="flex-1 bg-blue-500 hover:bg-blue-600"
+                      className="flex-1 bg-blue-500 hover:bg-blue-600 mobile-btn"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>

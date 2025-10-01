@@ -21,19 +21,19 @@ export function Header() {
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <Fish className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Fish className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                <Star className="w-2.5 h-2.5 text-white fill-white" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full flex items-center justify-center">
+                <Star className="w-2 h-2 md:w-2.5 md:h-2.5 text-white fill-white" />
               </div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+              <h1 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
                 Kampala Fried Fish
               </h1>
               <p className="text-xs text-gray-600 font-medium">
@@ -57,19 +57,19 @@ export function Header() {
           </nav>
 
           {/* Right Section */}
-          <div className="flex items-center space-x-3">
-            {/* Location */}
+          <div className="flex items-center space-x-2 md:space-x-3">
+            {/* Location - Hidden on mobile */}
             <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-full">
               <MapPin className="w-4 h-4 text-orange-500" />
               <span className="hidden lg:inline font-medium">Kabusu, Uganda</span>
             </div>
 
-            {/* Order Button */}
-            <Link href="/order" className="hidden sm:block">
-              <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 h-11 px-6 rounded-full font-semibold group">
-                <Phone className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                <span className="hidden md:inline">Order Now</span>
-                <span className="md:hidden">Order</span>
+            {/* Order Button - Always visible but smaller on mobile */}
+            <Link href="/order" className="block">
+              <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 h-9 md:h-11 px-3 md:px-6 rounded-full font-semibold group text-sm md:text-base">
+                <Phone className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">Order Now</span>
+                <span className="sm:hidden">Order</span>
               </Button>
             </Link>
 
@@ -80,9 +80,9 @@ export function Header() {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
+                <X className="w-5 h-5 md:w-6 md:h-6 text-gray-700" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
+                <Menu className="w-5 h-5 md:w-6 md:h-6 text-gray-700" />
               )}
             </button>
           </div>

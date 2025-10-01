@@ -199,3 +199,162 @@
     transform: scale(0.98);
   }
 }
+
+/* Mobile app-like experience */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile app-like smooth scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better mobile spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Mobile-optimized hero section */
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+
+  /* Mobile-friendly floating buttons */
+  .floating-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .floating-button:active {
+    transform: scale(0.95);
+  }
+
+  /* Mobile-optimized cards with better shadows */
+  .mobile-card {
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  /* Better mobile text readability */
+  .mobile-text {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Mobile-optimized images */
+  .mobile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+  }
+
+  /* Mobile-friendly form elements */
+  .mobile-input {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Mobile navigation improvements */
+  .mobile-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Better mobile button sizing */
+  .mobile-btn {
+    min-height: 48px;
+    min-width: 48px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Mobile-optimized grid layouts */
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Mobile-friendly spacing */
+  .mobile-spacing {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Better mobile touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile-optimized animations */
+  .mobile-animate {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Better mobile focus states */
+  .mobile-focus:focus {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+  }
+}
+
+/* PWA-like mobile experience */
+@media (max-width: 768px) and (orientation: portrait) {
+  /* Full viewport height for mobile */
+  .full-vh {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Better mobile scrolling */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile-optimized modal */
+  .mobile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Mobile-friendly content */
+  .mobile-content {
+    position: relative;
+    background: white;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem;
+    margin-top: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}

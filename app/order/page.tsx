@@ -52,7 +52,7 @@ export default function OrderPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!phoneNumber || !selectedSize) return
+    if (!phoneNumber) return
 
     setIsSubmitting(true)
 
@@ -63,20 +63,24 @@ export default function OrderPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          productName,
-          fishType,
+          productName: productName || "General Fish Order",
+          fishType: fishType || "Mixed",
           phoneNumber,
           customerName,
-          selectedSize,
+          selectedSize: selectedSize || "To be discussed",
           specialRequests,
         }),
       })
 
+      const result = await response.json()
+
       if (response.ok) {
         setOrderSubmitted(true)
+      } else {
+        alert(`Order submission failed: ${result.error}`)
       }
     } catch (error) {
-      console.error("Order submission failed:", error)
+      alert("Order submission failed. Please try again or contact us directly.")
     } finally {
       setIsSubmitting(false)
     }
@@ -92,7 +96,7 @@ export default function OrderPage() {
             </div>
             <h1 className="text-2xl font-bold text-foreground mb-3">Order Received!</h1>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              We'll call or WhatsApp you within 30 minutes to confirm your order.
+              Your order has been sent to our admin team. We'll call or WhatsApp you within 30 minutes to confirm your order.
             </p>
 
             <div className="bg-orange-50 rounded-xl p-4 mb-6 text-left">
@@ -220,7 +224,7 @@ export default function OrderPage() {
             <Button
               type="submit"
               className="w-full bg-primary hover:bg-primary/90 h-14 text-base font-semibold rounded-xl"
-              disabled={!phoneNumber || !selectedSize || isSubmitting}
+              disabled={!phoneNumber || isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Place Order"}
             </Button>

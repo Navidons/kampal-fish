@@ -113,7 +113,7 @@ export function Products() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {products.map((product, index) => (
             <Card
               key={index}
@@ -123,10 +123,10 @@ export function Products() {
                 <img
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
-                  className="w-full h-40 md:h-48 object-cover"
+                  className="w-full h-48 sm:h-40 md:h-48 object-cover"
                 />
                 {product.popular && (
-                  <Badge className="absolute top-2 md:top-3 left-2 md:left-3 bg-primary text-primary-foreground text-xs">
+                  <Badge className="absolute top-2 md:top-3 left-2 md:left-3 bg-orange-500 text-white text-xs">
                     <Star className="w-3 h-3 mr-1" />
                     Popular
                   </Badge>
@@ -151,7 +151,7 @@ export function Products() {
                         className="flex justify-between items-center p-2 md:p-3 bg-gray-50 rounded-lg"
                       >
                         <span className="text-xs md:text-sm font-medium">{size.name}</span>
-                        <span className="text-xs md:text-sm font-bold text-primary">{size.price}</span>
+                        <span className="text-xs md:text-sm font-bold text-orange-600">{size.price}</span>
                       </div>
                     ))}
                   </div>
@@ -162,7 +162,7 @@ export function Products() {
                     href={`/order?product=${encodeURIComponent(product.name)}&type=${product.fishType}`}
                     className="w-full"
                   >
-                    <Button className="w-full bg-primary hover:bg-primary/90 h-11 md:h-10 text-sm md:text-base font-semibold">
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600 h-12 md:h-10 text-sm md:text-base font-semibold rounded-lg">
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       Order Now
                     </Button>
@@ -174,35 +174,35 @@ export function Products() {
         </div>
 
         <div className="mt-12 md:mt-16 text-center">
-          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-orange-500/5 border-primary/20">
+          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-orange-50 to-orange-100/50 border-orange-200">
             <CardContent className="p-6 md:p-8">
-              <h4 className="text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">How to Order</h4>
+              <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4 md:mb-6">How to Order</h4>
               <p className="text-muted-foreground text-base md:text-lg mb-6">
                 We handle all orders through direct communication for the freshest fish experience
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="space-y-2">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-primary font-bold">1</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div className="space-y-3">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
+                    <span className="text-orange-600 font-bold text-lg">1</span>
                   </div>
-                  <h5 className="font-semibold text-sm md:text-base">Contact Us</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Call, WhatsApp, or visit our location</p>
+                  <h5 className="font-semibold text-base">Contact Us</h5>
+                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">Call, WhatsApp, or visit our location</p>
                 </div>
-                <div className="space-y-2">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-primary font-bold">2</span>
+                <div className="space-y-3">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
+                    <span className="text-orange-600 font-bold text-lg">2</span>
                   </div>
-                  <h5 className="font-semibold text-sm md:text-base">Select & Confirm</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">
+                  <h5 className="font-semibold text-base">Select & Confirm</h5>
+                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">
                     Choose your fish and receive email confirmation
                   </p>
                 </div>
-                <div className="space-y-2">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-primary font-bold">3</span>
+                <div className="space-y-3">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
+                    <span className="text-orange-600 font-bold text-lg">3</span>
                   </div>
-                  <h5 className="font-semibold text-sm md:text-base">Fresh Delivery</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">We deliver fresh to your location</p>
+                  <h5 className="font-semibold text-base">Fresh Delivery</h5>
+                  <p className="text-sm text-muted-foreground max-w-xs mx-auto">We deliver fresh to your location</p>
                 </div>
               </div>
             </CardContent>

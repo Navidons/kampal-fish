@@ -27,12 +27,9 @@ export async function POST(request: NextRequest) {
       orderDate: new Date().toISOString(),
     }
 
-    console.log("[v0] New order received:", orderData)
-
     // Verify email connection first
     const isEmailConnected = await verifyEmailConnection()
     if (!isEmailConnected) {
-      console.error("[v0] Email service not available")
       return NextResponse.json({ 
         error: "Email service temporarily unavailable" 
       }, { status: 503 })
@@ -42,13 +39,10 @@ export async function POST(request: NextRequest) {
     const emailResult = await sendOrderEmail(orderData)
     
     if (!emailResult.success) {
-      console.error("[v0] Failed to send order email:", emailResult.error)
       return NextResponse.json({ 
         error: "Failed to send notification email" 
       }, { status: 500 })
     }
-
-    console.log("[v0] Order email sent successfully:", emailResult.messageId)
 
     return NextResponse.json({
       success: true,
@@ -57,7 +51,6 @@ export async function POST(request: NextRequest) {
       emailSent: true,
     })
   } catch (error) {
-    console.error("[v0] Order submission error:", error)
     return NextResponse.json({ error: "Failed to submit order" }, { status: 500 })
   }
 }
