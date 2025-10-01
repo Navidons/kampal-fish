@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division. Fresh fish, authentic Ugandan spices, family dining since 2018.",
     images: [
       {
-        url: "/fish-plate-square.webp",
+        url: "/fish-plate-square.jpg",
         width: 1200,
         height: 630,
         alt: "Kampala Fried Fish - Premium Olusaniya",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kampala Fried Fish - Best Olusaniya in Kampala",
     description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division.",
-    images: ["/fish-plate-square.webp"],
+    images: ["/fish-plate-square.jpg"],
     creator: "@kampalafriedfish",
   },
   icons: {

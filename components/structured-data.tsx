@@ -15,7 +15,7 @@ export function StructuredData() {
       "url": "https://kampalafriedfish.ug",
       "logo": "https://kampalafriedfish.ug/kampala-fried-fish-logo-removed-bg.png",
       "image": [
-        "https://kampalafriedfish.ug/fish-plate-square.webp",
+        "https://kampalafriedfish.ug/fish-plate-square.jpg",
         "https://kampalafriedfish.ug/hot-fish-rack-landscape.webp",
         "https://kampalafriedfish.ug/spiced-fish-plate-square.webp"
       ],
