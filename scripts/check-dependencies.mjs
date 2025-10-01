@@ -13,14 +13,8 @@ try {
   require.resolve('sharp');
   console.log('✅ Sharp is installed');
 } catch (error) {
-  console.log('📦 Installing Sharp...');
-  try {
-    execSync('npm install sharp', { stdio: 'inherit' });
-    console.log('✅ Sharp installed successfully');
-  } catch (installError) {
-    console.error('❌ Failed to install Sharp:', installError.message);
-    process.exit(1);
-  }
+  console.log('📦 Sharp not found, but continuing build...');
+  console.log('⚠️  Note: Image optimization will be handled by Next.js');
 }
 
 // Check if required files exist
