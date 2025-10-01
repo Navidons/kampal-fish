@@ -71,7 +71,7 @@ export function SEOHead() {
       <meta property="og:locale" content="en_UG" />
       <meta property="og:site_name" content="Kampala Fried Fish" />
       <meta property="og:type" content="restaurant" />
-      <meta property="og:price:amount" content="18000" />
+      <meta property="og:price:amount" content="30000" />
       <meta property="og:price:currency" content="UGX" />
       
       {/* Twitter Card optimization */}

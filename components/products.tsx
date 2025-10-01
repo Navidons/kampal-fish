@@ -10,7 +10,7 @@ export function Products() {
     {
       name: "Small Lusaniya",
       description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
-      price: "UGX 18,000",
+      price: "UGX 30,000",
       image: "/fish-plate-square.webp",
       popular: true,
       fishType: "Nile Perch",
@@ -20,7 +20,7 @@ export function Products() {
     {
       name: "Medium Lusaniya",
       description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
-      price: "UGX 28,000",
+      price: "UGX 60,000",
       image: "/hot-fish-rack-landscape.webp",
       popular: true,
       fishType: "Nile Perch",
@@ -30,7 +30,7 @@ export function Products() {
     {
       name: "Large Lusaniya",
       description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
-      price: "UGX 38,000",
+      price: "UGX 90,000",
       image: "/spiced-fish-plate-square.webp",
       popular: true,
       fishType: "Nile Perch",
@@ -40,12 +40,12 @@ export function Products() {
   ]
 
   const customOrders = [
-    { weight: "1/2 kg", price: "UGX 8,000" },
-    { weight: "1 kg", price: "UGX 12,000" },
-    { weight: "2 kg", price: "UGX 22,000" },
-    { weight: "4 kg", price: "UGX 42,000" },
-    { weight: "6 kg", price: "UGX 60,000" },
-    { weight: "8 kg", price: "UGX 75,000" },
+    { weight: "1/2 kg", price: "UGX 15,000" },
+    { weight: "1 kg", price: "UGX 30,000" },
+    { weight: "2 kg", price: "UGX 60,000" },
+    { weight: "4 kg", price: "UGX 120,000" },
+    { weight: "6 kg", price: "UGX 180,000" },
+    { weight: "8 kg", price: "UGX 240,000" },
   ]
 
   return (

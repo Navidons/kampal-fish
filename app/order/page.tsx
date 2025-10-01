@@ -29,22 +29,22 @@ export default function OrderPage() {
   }, [searchParams])
 
   const productSizes = {
-    "Creamy Fried Nile Perch (Olusaniya Special)": [
-      { name: "Small (1-2kg)", price: "UGX 18,000" },
-      { name: "Medium (2-3kg)", price: "UGX 28,000" },
-      { name: "Large (3-4kg)", price: "UGX 38,000" },
-      { name: "Family (4kg+)", price: "UGX 48,000" },
+    "Small Lusaniya": [
+      { name: "Small (1kg)", price: "UGX 30,000" },
     ],
-    "Golden Fried Tilapia Whole": [
-      { name: "Small (500g-1kg)", price: "UGX 12,000" },
-      { name: "Medium (1-2kg)", price: "UGX 18,000" },
-      { name: "Large (2-3kg)", price: "UGX 25,000" },
+    "Medium Lusaniya": [
+      { name: "Medium (2kg)", price: "UGX 60,000" },
     ],
-    "Fried Fish Pieces (Mixed)": [
-      { name: "Small Pack (1kg)", price: "UGX 15,000" },
-      { name: "Medium Pack (2kg)", price: "UGX 28,000" },
-      { name: "Large Pack (3kg)", price: "UGX 40,000" },
-      { name: "Party Pack (5kg)", price: "UGX 65,000" },
+    "Large Lusaniya": [
+      { name: "Large (3kg)", price: "UGX 90,000" },
+    ],
+    "Custom Orders": [
+      { name: "1/2 kg", price: "UGX 15,000" },
+      { name: "1 kg", price: "UGX 30,000" },
+      { name: "2 kg", price: "UGX 60,000" },
+      { name: "4 kg", price: "UGX 120,000" },
+      { name: "6 kg", price: "UGX 180,000" },
+      { name: "8 kg", price: "UGX 240,000" },
     ],
   }
 

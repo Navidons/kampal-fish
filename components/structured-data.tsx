@@ -123,7 +123,7 @@ export function StructuredData() {
                 "description": "Perfect for 1-2 people. Nile Perch on massive plates, fried to perfection.",
                 "offers": {
                   "@type": "Offer",
-                  "price": "18000",
+                  "price": "30000",
                   "priceCurrency": "UGX"
                 }
               },
@@ -133,7 +133,7 @@ export function StructuredData() {
                 "description": "Ideal for 3-4 people. Generous portions of golden fried Nile Perch.",
                 "offers": {
                   "@type": "Offer",
-                  "price": "28000",
+                  "price": "60000",
                   "priceCurrency": "UGX"
                 }
               },
@@ -143,7 +143,7 @@ export function StructuredData() {
                 "description": "Perfect for families and groups. Massive plates of crispy fried Nile Perch.",
                 "offers": {
                   "@type": "Offer",
-                  "price": "38000",
+                  "price": "90000",
                   "priceCurrency": "UGX"
                 }
               }
