@@ -165,21 +165,22 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Your Name" className="focus:ring-2 focus:ring-primary/20" />
-                  <Input placeholder="Phone Number" className="focus:ring-2 focus:ring-primary/20" />
+                  <Input placeholder="Your Name (Optional)" className="focus:ring-2 focus:ring-primary/20" />
+                  <Input placeholder="Phone Number *" className="focus:ring-2 focus:ring-primary/20" required />
                 </div>
-                <Input placeholder="Email Address" className="focus:ring-2 focus:ring-primary/20" />
-                <Input placeholder="Fish Type & Quantity Needed" className="focus:ring-2 focus:ring-primary/20" />
+                <Input placeholder="Email Address (Optional)" className="focus:ring-2 focus:ring-primary/20" />
+                <Input placeholder="Fish Type & Quantity Needed (Optional)" className="focus:ring-2 focus:ring-primary/20" />
                 <Textarea
-                  placeholder="Your message or specific requirements..."
+                  placeholder="Your message or specific requirements... *"
                   rows={4}
                   className="focus:ring-2 focus:ring-primary/20"
+                  required
                 />
                 <Button className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300">
                   Send Order Inquiry
                 </Button>
                 <p className="text-xs text-center text-muted-foreground">
-                  We'll respond with availability and send email confirmation
+                  * Required fields. We'll respond with availability and send email confirmation
                 </p>
               </CardContent>
             </Card>

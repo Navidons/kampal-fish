@@ -2,128 +2,110 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, MapPin } from "lucide-react"
+import { Menu, X, Phone, MapPin, Fish, Star } from "lucide-react"
 import Link from "next/link"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/#products", label: "Products" },
+    { href: "/menu", label: "Menu" },
+    { href: "/#services", label: "Services" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ]
+
   return (
-    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 touch-target">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-primary-foreground font-bold text-lg md:text-xl">KF</span>
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Fish className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                <Star className="w-2.5 h-2.5 text-white fill-white" />
+              </div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-bold text-foreground">Kampala Fried Fish</h1>
-              <p className="text-xs text-muted-foreground">Olusaniya • Premium Fried Fish • Uganda</p>
+              <h1 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                Kampala Fried Fish
+              </h1>
+              <p className="text-xs text-gray-600 font-medium">
+                Olusaniya • Premium Fried Fish • Uganda
+              </p>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-6">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium">
-              Home
-            </Link>
-            <Link href="/#products" className="text-foreground hover:text-primary transition-colors font-medium">
-              Products
-            </Link>
-            <Link href="/menu" className="text-foreground hover:text-primary transition-colors font-medium">
-              Menu
-            </Link>
-            <Link href="/#services" className="text-foreground hover:text-primary transition-colors font-medium">
-              Services
-            </Link>
-            <Link href="/gallery" className="text-foreground hover:text-primary transition-colors font-medium">
-              Gallery
-            </Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
-              About
-            </Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
-              Contact
-            </Link>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg font-medium transition-all duration-200 relative group"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-orange-600 transition-all duration-200 group-hover:w-3/4 group-hover:left-1/8"></span>
+              </Link>
+            ))}
           </nav>
 
-          <div className="flex items-center space-x-2">
-            <div className="hidden md:flex items-center space-x-2 text-sm text-muted-foreground">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span className="hidden lg:inline">Kabusu, Uganda</span>
+          {/* Right Section */}
+          <div className="flex items-center space-x-3">
+            {/* Location */}
+            <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-full">
+              <MapPin className="w-4 h-4 text-orange-500" />
+              <span className="hidden lg:inline font-medium">Kabusu, Uganda</span>
             </div>
+
+            {/* Order Button */}
             <Link href="/order" className="hidden sm:block">
-              <Button className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 h-10 px-4">
-                <Phone className="w-4 h-4 mr-1" />
+              <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 h-11 px-6 rounded-full font-semibold group">
+                <Phone className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 <span className="hidden md:inline">Order Now</span>
                 <span className="md:hidden">Order</span>
               </Button>
             </Link>
+
+            {/* Mobile Menu Button */}
             <button
-              className="lg:hidden touch-target p-2"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-gray-700" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-700" />
+              )}
             </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border">
-            <nav className="flex flex-col space-y-1 mt-4">
-              <Link
-                href="/"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/#products"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Products
-              </Link>
-              <Link
-                href="/menu"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Menu
-              </Link>
-              <Link
-                href="/#services"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="/gallery"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Gallery
-              </Link>
-              <Link
-                href="/about"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-foreground hover:text-primary transition-colors font-medium py-3 px-2 touch-target rounded-lg hover:bg-primary/5"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <div className="pt-2">
+          <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md">
+            <nav className="py-4 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg font-medium transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-4 px-4">
                 <Link href="/order" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="bg-primary hover:bg-primary/90 w-full h-12 text-base font-semibold">
-                    <Phone className="w-4 h-4 mr-2" />
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white h-12 text-base font-semibold rounded-lg shadow-lg">
+                    <Phone className="w-5 h-5 mr-2" />
                     Order Now
                   </Button>
                 </Link>
