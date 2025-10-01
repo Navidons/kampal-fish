@@ -13,6 +13,7 @@ import { SEOHead } from "@/components/seo-head"
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kampalafriedfish.ug'),
   title: {
     default: "Kampala Fried Fish - Best Olusaniya in Kampala | Kabusu Market",
     template: "%s | Kampala Fried Fish - Best Olusaniya in Kampala"
