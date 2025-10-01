@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
+import { sendContactFormEmail, verifyEmailConnection } from "@/lib/email"
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,59 +23,37 @@ export async function POST(request: NextRequest) {
       contactDate: new Date().toISOString(),
     }
 
-    // Email content for admin
-    const emailContent = `
-      NEW CONTACT INQUIRY - KAMPALA FRIED FISH
-      
-      Contact Details:
-      - Phone Number: ${phoneNumber}
-      - Inquiry: ${inquiry}
-      - Contact Time: ${contactData.contactTime}
-      
-      ACTION REQUIRED:
-      Please contact the customer within 30 minutes via call or WhatsApp to:
-      1. Address their inquiry
-      2. Provide information about Olusaniya availability
-      3. Discuss pricing and delivery options
-      4. Take their order if applicable
-      
-      Customer Contact: ${phoneNumber}
-      
-      ---
-      Kampala Fried Fish - Kabusu, Uganda
-    `
-
-    // In a real application, you would send this email to your admin team
-    // For now, we'll log it and return success
     console.log("[v0] New contact inquiry received:", contactData)
-    console.log("[v0] Email content for admin:", emailContent)
 
-    // Here you would typically:
-    // 1. Save inquiry to database
-    // 2. Send email to admin team
-    // 3. Send SMS/WhatsApp notification to admin team
+    // Verify email connection first
+    const isEmailConnected = await verifyEmailConnection()
+    if (!isEmailConnected) {
+      console.error("[v0] Email service not available")
+      return NextResponse.json({ 
+        error: "Email service temporarily unavailable" 
+      }, { status: 503 })
+    }
 
-    // Simulate email sending (replace with actual email service)
-    // await sendEmailToAdmin(emailContent, contactData)
+    // Send email to admin
+    const emailResult = await sendContactFormEmail(contactData)
+    
+    if (!emailResult.success) {
+      console.error("[v0] Failed to send contact email:", emailResult.error)
+      return NextResponse.json({ 
+        error: "Failed to send notification email" 
+      }, { status: 500 })
+    }
+
+    console.log("[v0] Contact email sent successfully:", emailResult.messageId)
 
     return NextResponse.json({
       success: true,
       message: "Contact inquiry submitted successfully",
       contactId: `CF-${Date.now()}`,
+      emailSent: true,
     })
   } catch (error) {
     console.error("[v0] Contact form submission error:", error)
     return NextResponse.json({ error: "Failed to submit contact inquiry" }, { status: 500 })
   }
-}
-
-// Function to send email to admin (implement with your email service)
-async function sendEmailToAdmin(content: string, contactData: any) {
-  // Example implementation with a service like Resend, SendGrid, etc.
-  // const emailService = new EmailService()
-  // await emailService.send({
-  //   to: "admin@kampalafriedfish.com",
-  //   subject: `New Contact Inquiry - ${contactData.phoneNumber}`,
-  //   text: content
-  // })
 }
