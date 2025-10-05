@@ -5,9 +5,9 @@
   "scripts": {
     "prebuild": "node scripts/check-dependencies.mjs && node scripts/build-setup.mjs || echo 'Build setup completed with warnings'",
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev -p 5000",
     "lint": "next lint",
-    "start": "next start",
+    "start": "next start -p 5000",
     "convert-webp": "node convert-to-webp.mjs",
     "optimize-images": "npm run convert-webp",
     "generate-pwa-icons": "node generate-pwa-icons.mjs",
