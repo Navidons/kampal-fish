@@ -122,9 +122,11 @@ export const metadata: Metadata = {
     ],
   },
   verification: {
-    google: "google-site-verification=kampalafriedfish-online-verification-code",
+    google: "google8226a6f5ec1e05d6",
     yandex: "90993c6596863023",
-    yahoo: "yahoo-site-verification=kampalafriedfish-online-verification-code",
+    other: {
+      "msvalidate.01": "F28096D64E8C1368F12E8802EBB6C455"
+    }
   },
 }
 
