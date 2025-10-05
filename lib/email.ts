@@ -117,7 +117,7 @@ Kampala Fried Fish - Kabusu, Uganda
   `
 
   return await sendEmail({
-    to: process.env.ADMIN_EMAIL || process.env.GMAIL_USER || '',
+    to: 'Kffug@gmail.com',
     subject,
     text,
     html,
@@ -205,7 +205,7 @@ Kampala Fried Fish - Kabusu, Uganda
   `
 
   return await sendEmail({
-    to: process.env.ADMIN_EMAIL || process.env.GMAIL_USER || '',
+    to: 'Kffug@gmail.com',
     subject,
     text,
     html,
