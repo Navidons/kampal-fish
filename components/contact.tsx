@@ -110,9 +110,9 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Primary: +256708923758
+                  Primary: +256792460182
                   <br />
-                  Secondary: 0787 012041
+                  Secondary: +256757159282
                   <br />
                   <span className="text-sm text-primary font-medium">Call for immediate orders & pricing</span>
                 </p>
@@ -123,17 +123,38 @@ export function Contact() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
                   <MessageCircle className="w-5 h-5 text-primary" />
-                  <span>WhatsApp Orders</span>
+                  <span>WhatsApp Orders (Recommended)</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
                   Quick orders via WhatsApp
                   <br />
-                  +256 708 923758
+                  +256 792 460182
                   <br />
                   <span className="text-sm text-primary font-medium">Send photos of desired fish sizes</span>
                 </p>
+                <Button 
+                  className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white"
+                  onClick={() => {
+                    const phoneNumber = "256792460182"
+                    const message = `Hello! I'd like to order fresh Olusaniya from Kampala Fried Fish.
+
+Please let me know about:
+- Available sizes and prices
+- Delivery options in Kabusu area
+- Preparation time
+- Payment methods
+
+Thank you!`
+                    const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                    window.open(whatsappUrl, "_blank")
+                  }}
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Order on WhatsApp
+                </Button>
               </CardContent>
             </Card>
 
@@ -173,8 +194,8 @@ export function Contact() {
                       1
                     </div>
                     <div>
-                      <h5 className="font-semibold text-sm">Contact Us</h5>
-                      <p className="text-xs text-muted-foreground">Call, WhatsApp, or visit our location in Kabusu</p>
+                      <h5 className="font-semibold text-sm">WhatsApp Us</h5>
+                      <p className="text-xs text-muted-foreground">Send message with your order details</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -193,9 +214,9 @@ export function Contact() {
                       3
                     </div>
                     <div>
-                      <h5 className="font-semibold text-sm">Email Confirmation</h5>
+                      <h5 className="font-semibold text-sm">WhatsApp Confirmation</h5>
                       <p className="text-xs text-muted-foreground">
-                        We send order confirmation to you and our reception
+                        We confirm your order details via WhatsApp
                       </p>
                     </div>
                   </div>

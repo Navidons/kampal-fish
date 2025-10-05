@@ -142,8 +142,8 @@ export default function AboutPage() {
                   </div>
                   <div className="pt-4 border-t">
                     <p className="text-sm text-muted-foreground text-center">
-                      <strong>Contact:</strong> +256708923758 | 0787 012041<br />
-                      <strong>WhatsApp:</strong> +256 708 923758
+                      <strong>Contact:</strong> +256792460182 | +256757159282<br />
+                      <strong>WhatsApp:</strong> +256 792 460182
                     </p>
                   </div>
                 </CardContent>

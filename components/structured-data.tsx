@@ -19,8 +19,8 @@ export function StructuredData() {
         "https://kampalafriedfish.ug/hot-fish-rack-landscape.webp",
         "https://kampalafriedfish.ug/spiced-fish-plate-square.webp"
       ],
-      "telephone": "+256708923758",
-      "email": "info@kampalafriedfish.ug",
+      "telephone": "+256792460182",
+      "email": "Kffug@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kabusu Market Area",
@@ -52,7 +52,7 @@ export function StructuredData() {
       "sameAs": [
         "https://www.facebook.com/kampalafriedfish",
         "https://www.instagram.com/kampalafriedfish",
-        "https://wa.me/256708923758"
+        "https://wa.me/256792460182"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -98,7 +98,7 @@ export function StructuredData() {
       "name": "Kampala Fried Fish",
       "description": "Premium Olusaniya (fried fish on large plates) restaurant in Kabusu, Kampala",
       "url": "https://kampalafriedfish.ug",
-      "telephone": "+256708923758",
+      "telephone": "+256792460182",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kabusu Market Area",
@@ -171,14 +171,14 @@ export function StructuredData() {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+256708923758",
+        "telephone": "+256792460182",
         "contactType": "customer service",
         "availableLanguage": ["English", "Luganda"]
       },
       "sameAs": [
         "https://www.facebook.com/kampalafriedfish",
         "https://www.instagram.com/kampalafriedfish",
-        "https://wa.me/256708923758"
+        "https://wa.me/256792460182"
       ],
       "foundingDate": "2018",
       "areaServed": {

@@ -12,24 +12,64 @@ export function Hero() {
 
   const heroImages = [
     {
-      image: "/fish-plate-square.webp",
+      image: "/fish-with-tomatoes-super-fried10.jpg",
       title: "Empuuta ku Lusaniya",
       subtitle: "Nile Perch on massive plates",
     },
     {
-      image: "/hot-fish-rack-landscape.webp",
+      image: "/fish-with-tomatoes-super-fried009.jpg",
       title: "Fried to Perfection",
       subtitle: "Golden crispy exterior",
     },
     {
-      image: "/hot-spice-fish-rack-portrait.webp",
+      image: "/fish-with-tomatoes-super-fried008.jpg",
       title: "Authentic Spices",
       subtitle: "Traditional Ugandan flavors",
     },
     {
-      image: "/spiced-fish-plate-square.webp",
+      image: "/fish-with-tomatoes-super-fried007.jpg",
       title: "Family Experience",
       subtitle: "Perfect for sharing",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried006.jpg",
+      title: "Fresh Ingredients",
+      subtitle: "With tomatoes and onions",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried005.jpg",
+      title: "Premium Quality",
+      subtitle: "Best fish in Kampala",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried004.jpg",
+      title: "Delicious Olusaniya",
+      subtitle: "Crispy and flavorful",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried003.jpg",
+      title: "Local Favorite",
+      subtitle: "Kabusu Market specialty",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried002.jpg",
+      title: "Hearty Portions",
+      subtitle: "Satisfying meals",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried001.jpg",
+      title: "Traditional Recipe",
+      subtitle: "Authentic Ugandan taste",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried.png",
+      title: "Fresh Daily",
+      subtitle: "Made to order",
+    },
+    {
+      image: "/fish-with-tomatoes-super-fried-ovacado.jpg",
+      title: "With Avocado",
+      subtitle: "Fresh and healthy",
     },
   ]
 
@@ -159,18 +199,30 @@ export function Hero() {
 
           {/* Modern CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <Link href="/order">
-              <Button 
-                size="lg" 
-                className="group relative w-full max-w-sm sm:max-w-none bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center justify-center">
-                  Order Now
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="group relative w-full max-w-sm sm:max-w-none bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 overflow-hidden"
+              onClick={() => {
+                const phoneNumber = "256792460182"
+                const message = `Hello! I'd like to order fresh Olusaniya from Kampala Fried Fish.
+
+I'm interested in your premium Nile Perch on massive plates. Please let me know about:
+- Available sizes and prices
+- Delivery options in Kabusu area
+- Preparation time
+
+Thank you!`
+                const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                window.open(whatsappUrl, "_blank")
+              }}
+            >
+              <span className="relative z-10 flex items-center justify-center">
+                Order Now
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Button>
             
             <Link href="/#products">
               <Button

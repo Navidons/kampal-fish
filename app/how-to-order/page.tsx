@@ -37,7 +37,7 @@ export default function HowToOrder() {
                       <CardContent className="p-4">
                         <div className="flex items-center space-x-2">
                           <Phone className="w-4 h-4 text-primary" />
-                          <span className="text-sm font-medium">+256708923758</span>
+                          <span className="text-sm font-medium">+256792460182</span>
                         </div>
                       </CardContent>
                     </Card>

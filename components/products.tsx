@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -11,7 +13,7 @@ export function Products() {
       name: "Small Lusaniya",
       description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
       price: "UGX 30,000",
-      image: "/fish-plate-square.webp",
+      image: "/fish-with-tomatoes-super-fried002.jpg",
       popular: true,
       fishType: "Nile Perch",
       serving: "1-2 People",
@@ -21,7 +23,7 @@ export function Products() {
       name: "Medium Lusaniya",
       description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
       price: "UGX 60,000",
-      image: "/hot-fish-rack-landscape.webp",
+      image: "/fish-with-tomatoes-super-fried007.jpg",
       popular: true,
       fishType: "Nile Perch",
       serving: "3-4 People",
@@ -31,7 +33,7 @@ export function Products() {
       name: "Large Lusaniya",
       description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
       price: "UGX 90,000",
-      image: "/spiced-fish-plate-square.webp",
+      image: "/fish-with-tomatoes-super-fried001.jpg",
       popular: true,
       fishType: "Nile Perch",
       serving: "5+ People",
@@ -134,15 +136,26 @@ export function Products() {
                   </div>
                 </div>
 
-                <Link
-                  href={`/order?product=${encodeURIComponent(product.name)}&price=${product.price}`}
-                  className="w-full block"
+                <Button 
+                  onClick={() => {
+                    const phoneNumber = "256792460182"
+                    const message = `Hello! I'd like to order ${product.name} (${product.price}) from Kampala Fried Fish.
+
+Product: ${product.name}
+Price: ${product.price}
+Fish Type: ${product.fishType}
+Serves: ${product.serving}
+
+Please confirm availability and delivery details. Thank you!`
+                    const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                    window.open(whatsappUrl, "_blank")
+                  }}
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white h-12 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
                 >
-                  <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white h-12 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                    <ShoppingCart className="w-5 h-5 mr-2" />
-                    Order {product.name}
-                  </Button>
-                </Link>
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Order {product.name}
+                </Button>
               </CardContent>
               </Card>
             </IntersectionObserver>
@@ -163,11 +176,24 @@ export function Products() {
               <div className="space-y-2">
                 <h4 className="font-semibold text-foreground">{order.weight}</h4>
                 <p className="text-orange-600 font-bold">{order.price}</p>
-                <Link href={`/order?weight=${order.weight}&price=${order.price}`}>
-                  <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs">
-                    Order
-                  </Button>
-                </Link>
+                <Button 
+                  size="sm" 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs"
+                  onClick={() => {
+                    const phoneNumber = "256792460182"
+                    const message = `Hello! I'd like to order a custom fish order from Kampala Fried Fish.
+
+Weight: ${order.weight}
+Price: ${order.price}
+
+Please confirm availability and delivery details. Thank you!`
+                    const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+                    window.open(whatsappUrl, "_blank")
+                  }}
+                >
+                  Order
+                </Button>
               </div>
             </Card>
           ))}

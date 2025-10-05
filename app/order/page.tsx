@@ -1,234 +1,121 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Phone, User, CheckCircle, Clock } from "lucide-react"
+import { ArrowLeft, MessageCircle, CheckCircle, Clock } from "lucide-react"
 import Link from "next/link"
 
 export default function OrderPage() {
   const searchParams = useSearchParams()
-  const [productName, setProductName] = useState("")
-  const [fishType, setFishType] = useState("")
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [customerName, setCustomerName] = useState("")
-  const [selectedSize, setSelectedSize] = useState("")
-  const [specialRequests, setSpecialRequests] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [orderSubmitted, setOrderSubmitted] = useState(false)
 
   useEffect(() => {
-    setProductName(searchParams.get("product") || "")
-    setFishType(searchParams.get("type") || "")
+    // Auto-redirect to WhatsApp when page loads
+    const productName = searchParams.get("product") || ""
+    const fishType = searchParams.get("type") || ""
+    const weight = searchParams.get("weight") || ""
+    const price = searchParams.get("price") || ""
+    
+    const phoneNumber = "256792460182"
+    let message = `Hello! I'd like to order from Kampala Fried Fish.\n\n`
+    
+    if (productName) {
+      message += `Product: ${productName}\n`
+    }
+    if (fishType) {
+      message += `Fish Type: ${fishType}\n`
+    }
+    if (weight) {
+      message += `Weight: ${weight}\n`
+    }
+    if (price) {
+      message += `Price: ${price}\n`
+    }
+    
+    message += `\nPlease confirm availability and delivery details. Thank you!`
+    
+    const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    window.open(whatsappUrl, "_blank")
   }, [searchParams])
 
-  const productSizes = {
-    "Small Lusaniya": [
-      { name: "Small (1kg)", price: "UGX 30,000" },
-    ],
-    "Medium Lusaniya": [
-      { name: "Medium (2kg)", price: "UGX 60,000" },
-    ],
-    "Large Lusaniya": [
-      { name: "Large (3kg)", price: "UGX 90,000" },
-    ],
-    "Custom Orders": [
-      { name: "1/2 kg", price: "UGX 15,000" },
-      { name: "1 kg", price: "UGX 30,000" },
-      { name: "2 kg", price: "UGX 60,000" },
-      { name: "4 kg", price: "UGX 120,000" },
-      { name: "6 kg", price: "UGX 180,000" },
-      { name: "8 kg", price: "UGX 240,000" },
-    ],
-  }
-
-  const currentSizes = productSizes[productName as keyof typeof productSizes] || []
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!phoneNumber) return
-
-    setIsSubmitting(true)
-
-    try {
-      const response = await fetch("/api/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productName: productName || "General Fish Order",
-          fishType: fishType || "Mixed",
-          phoneNumber,
-          customerName,
-          selectedSize: selectedSize || "To be discussed",
-          specialRequests,
-        }),
-      })
-
-      const result = await response.json()
-
-      if (response.ok) {
-        setOrderSubmitted(true)
-      } else {
-        alert(`Order submission failed: ${result.error}`)
-      }
-    } catch (error) {
-      alert("Order submission failed. Please try again or contact us directly.")
-    } finally {
-      setIsSubmitting(false)
+  const handleWhatsAppRedirect = () => {
+    const productName = searchParams.get("product") || ""
+    const fishType = searchParams.get("type") || ""
+    const weight = searchParams.get("weight") || ""
+    const price = searchParams.get("price") || ""
+    
+    const phoneNumber = "256792460182"
+    let message = `Hello! I'd like to order from Kampala Fried Fish.\n\n`
+    
+    if (productName) {
+      message += `Product: ${productName}\n`
     }
-  }
-
-  if (orderSubmitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-orange-50/30 to-white">
-        <div className="px-4 py-8 max-w-md mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
-            </div>
-            <h1 className="text-2xl font-bold text-foreground mb-3">Order Received!</h1>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Your order has been sent to our admin team. We'll call or WhatsApp you within 30 minutes to confirm your order.
-            </p>
-
-            <div className="bg-orange-50 rounded-xl p-4 mb-6 text-left">
-              <div className="flex items-center mb-2">
-                <Clock className="w-4 h-4 text-orange-600 mr-2" />
-                <span className="font-medium text-sm">What's Next:</span>
-              </div>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Confirmation call/WhatsApp</li>
-                <li>• Order & delivery details</li>
-                <li>• Fresh fish preparation</li>
-              </ul>
-            </div>
-
-            <Link href="/">
-              <Button className="w-full bg-primary hover:bg-primary/90 h-12 text-base font-medium">
-                Continue Shopping
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
+    if (fishType) {
+      message += `Fish Type: ${fishType}\n`
+    }
+    if (weight) {
+      message += `Weight: ${weight}\n`
+    }
+    if (price) {
+      message += `Price: ${price}\n`
+    }
+    
+    message += `\nPlease confirm availability and delivery details. Thank you!`
+    
+    const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    window.open(whatsappUrl, "_blank")
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50/30 to-white">
-      <div className="px-4 py-6 max-w-md mx-auto">
+      <div className="px-4 py-8 max-w-md mx-auto">
         <div className="mb-6">
           <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-4 touch-target">
             <ArrowLeft className="w-5 h-5 mr-2" />
             <span className="font-medium">Back</span>
           </Link>
-          <h1 className="text-2xl font-bold text-foreground mb-2">Place Your Order</h1>
-          <p className="text-muted-foreground text-sm">We'll contact you to finalize details</p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">Order via WhatsApp</h1>
+          <p className="text-muted-foreground text-sm">All orders are processed through WhatsApp for better service</p>
         </div>
 
-        {productName && (
-          <div className="bg-white rounded-2xl shadow-sm p-4 mb-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-foreground text-sm">{productName}</h3>
-              <Badge variant="secondary" className="text-xs">
-                {fishType}
-              </Badge>
-            </div>
-
-            <div className="space-y-3">
-              <Label className="text-sm font-medium">Select Size:</Label>
-              {currentSizes.map((size, index) => (
-                <div
-                  key={index}
-                  className={`p-4 border-2 rounded-xl cursor-pointer transition-all touch-target ${
-                    selectedSize === `${size.name} - ${size.price}`
-                      ? "border-primary bg-primary/5"
-                      : "border-gray-200 hover:border-primary/50"
-                  }`}
-                  onClick={() => setSelectedSize(`${size.name} - ${size.price}`)}
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium text-sm">{size.name}</span>
-                    <span className="text-primary font-bold text-sm">{size.price}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <MessageCircle className="w-10 h-10 text-green-600" />
           </div>
-        )}
+          
+          <h2 className="text-xl font-bold text-foreground mb-3">Redirecting to WhatsApp...</h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed">
+            You're being redirected to WhatsApp to place your order. This ensures faster communication and better service.
+          </p>
 
-        <div className="bg-white rounded-2xl shadow-sm p-4">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="phone" className="flex items-center text-sm font-medium">
-                <Phone className="w-4 h-4 mr-2 text-primary" />
-                Phone Number *
-              </Label>
-              <Input
-                id="phone"
-                type="tel"
-                placeholder="+256 708 923758"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                required
-                className="h-12 text-base border-2 focus:border-primary"
-              />
-              <p className="text-xs text-muted-foreground">For order confirmation call/WhatsApp</p>
+          <div className="bg-green-50 rounded-xl p-4 mb-6 text-left">
+            <div className="flex items-center mb-2">
+              <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+              <span className="font-medium text-sm">WhatsApp Benefits:</span>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="name" className="flex items-center text-sm font-medium">
-                <User className="w-4 h-4 mr-2 text-primary" />
-                Your Name (Optional)
-              </Label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Enter your name"
-                value={customerName}
-                onChange={(e) => setCustomerName(e.target.value)}
-                className="h-12 text-base border-2 focus:border-primary"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="requests" className="text-sm font-medium">
-                Special Requests (Optional)
-              </Label>
-              <Textarea
-                id="requests"
-                placeholder="Any special instructions..."
-                value={specialRequests}
-                onChange={(e) => setSpecialRequests(e.target.value)}
-                rows={3}
-                className="text-base border-2 focus:border-primary resize-none"
-              />
-            </div>
-
-            <div className="bg-orange-50 rounded-xl p-4">
-              <h4 className="font-semibold text-foreground mb-2 text-sm">Quick Process:</h4>
-              <ul className="text-xs text-muted-foreground space-y-1">
-                <li>• Submit order → Get confirmation call</li>
-                <li>• Confirm details → Fresh fish delivered</li>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• Instant communication</li>
+              <li>• Photo sharing for fish selection</li>
+              <li>• Real-time order updates</li>
+              <li>• Direct delivery coordination</li>
               </ul>
             </div>
 
             <Button
-              type="submit"
-              className="w-full bg-primary hover:bg-primary/90 h-14 text-base font-semibold rounded-xl"
-              disabled={!phoneNumber || isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Place Order"}
+            onClick={handleWhatsAppRedirect}
+            className="w-full bg-green-500 hover:bg-green-600 h-12 text-base font-medium mb-4"
+          >
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Open WhatsApp Now
+          </Button>
+
+          <Link href="/">
+            <Button variant="outline" className="w-full h-12 text-base font-medium">
+              Back to Home
             </Button>
-          </form>
+          </Link>
         </div>
       </div>
     </div>

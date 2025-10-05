@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, MapPin } from "lucide-react"
 
@@ -27,6 +29,20 @@ export function CTASection() {
           <Button
             size="lg"
             className="bg-background text-foreground hover:bg-background/90 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+            onClick={() => {
+              const phoneNumber = "256792460182"
+              const message = `Hello! I'd like to order fresh Olusaniya from Kampala Fried Fish.
+
+I'm ready to taste the finest fish in Uganda! Please let me know about:
+- Available sizes and prices
+- Delivery options in Kabusu area
+- Preparation time
+
+Thank you!`
+              const encodedMessage = message.replace(/ /g, '%20').replace(/\n/g, '%0A')
+              const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+              window.open(whatsappUrl, "_blank")
+            }}
           >
             <Phone className="w-5 h-5 mr-2" />
             Order Now

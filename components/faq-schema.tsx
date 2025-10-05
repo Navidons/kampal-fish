@@ -37,7 +37,7 @@ export function FAQSchema() {
           "name": "How can I place an order?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can place an order by calling us at +256 708 923758, visiting our order page on the website, or contacting us via WhatsApp. We offer both pickup and delivery services."
+            "text": "You can place an order by calling us at +256 792 460182, visiting our order page on the website, or contacting us via WhatsApp. We offer both pickup and delivery services."
           }
         },
         {

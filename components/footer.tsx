@@ -94,15 +94,15 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-background/70">0787 012041 / +256708923758</span>
+                <span className="text-background/70">+256757159282 / +256792460182</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="w-5 h-5 text-primary" />
-                <span className="text-background/70">WhatsApp: +256 708 923758</span>
+                <span className="text-background/70">WhatsApp: +256 792 460182</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-background/70">info@kampalafriedfish.ug</span>
+                <span className="text-background/70">Kffug@gmail.com</span>
               </div>
             </div>
           </div>

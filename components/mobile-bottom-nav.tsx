@@ -28,7 +28,7 @@ export function MobileBottomNav() {
       active: pathname === "/order"
     },
     {
-      href: "tel:+256708923758",
+      href: "tel:+256792460182",
       label: "Call",
       icon: Phone,
       active: false

@@ -120,7 +120,7 @@ export function OrderTracking() {
               <Input
                 id="phoneNumber"
                 type="tel"
-                placeholder="+256 708 923758"
+                placeholder="+256 792 460182"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className="mt-1"
@@ -171,14 +171,14 @@ export function OrderTracking() {
                 <Button 
                   variant="outline" 
                   className="mr-2"
-                  onClick={() => window.open(`tel:+256708923758`)}
+                  onClick={() => window.open(`tel:+256792460182`)}
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Call Us
                 </Button>
                 <Button 
                   variant="outline"
-                  onClick={() => window.open(`https://wa.me/256708923758?text=Hi, I'd like to check on my order ${orderStatus.id}`)}
+                  onClick={() => window.open(`https://wa.me/256792460182?text=Hi, I'd like to check on my order ${orderStatus.id}`)}
                 >
                   <Truck className="w-4 h-4 mr-2" />
                   WhatsApp
