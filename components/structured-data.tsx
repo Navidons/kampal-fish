@@ -8,16 +8,18 @@ export function StructuredData() {
     const localBusinessSchema = {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "@id": "https://kampalafriedfish.ug/#restaurant",
+      "@id": "https://kampalafriedfish.online/#restaurant",
       "name": "Kampala Fried Fish",
       "alternateName": "Olusaniya Kampala",
       "description": "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division. Fresh fish, authentic Ugandan spices, family dining since 2018.",
-      "url": "https://kampalafriedfish.ug",
-      "logo": "https://kampalafriedfish.ug/kampala-fried-fish-logo-removed-bg.png",
+      "url": "https://kampalafriedfish.online",
+      "logo": "https://kampalafriedfish.online/kampala-fried-fish-logo-removed-bg.png",
       "image": [
-        "https://kampalafriedfish.ug/fish-plate-square.jpg",
-        "https://kampalafriedfish.ug/hot-fish-rack-landscape.webp",
-        "https://kampalafriedfish.ug/spiced-fish-plate-square.webp"
+        "https://kampalafriedfish.online/fish-with-tomatoes-super-fried10.jpg",
+        "https://kampalafriedfish.online/fish-with-tomatoes-super-fried001.jpg",
+        "https://kampalafriedfish.online/fish-with-tomatoes-super-fried002.jpg",
+        "https://kampalafriedfish.online/fish-with-tomatoes-super-fried007.jpg",
+        "https://kampalafriedfish.online/fish-with-tomatoes-super-fried-ovacado.jpg"
       ],
       "telephone": "+256792460182",
       "email": "Kffug@gmail.com",
@@ -36,7 +38,7 @@ export function StructuredData() {
       "openingHours": "Mo-Su 06:00-24:00",
       "priceRange": "$$",
       "servesCuisine": ["Ugandan", "African", "Seafood"],
-      "hasMenu": "https://kampalafriedfish.ug/#products",
+      "hasMenu": "https://kampalafriedfish.online/#products",
       "acceptsReservations": true,
       "paymentAccepted": ["Cash", "Mobile Money"],
       "currenciesAccepted": "UGX",
@@ -66,7 +68,7 @@ export function StructuredData() {
           "@type": "Review",
           "author": {
             "@type": "Person",
-            "name": "Sarah M."
+            "name": "Sandra N."
           },
           "reviewRating": {
             "@type": "Rating",
@@ -97,7 +99,7 @@ export function StructuredData() {
       "@type": "FoodEstablishment",
       "name": "Kampala Fried Fish",
       "description": "Premium Olusaniya (fried fish on large plates) restaurant in Kabusu, Kampala",
-      "url": "https://kampalafriedfish.ug",
+      "url": "https://kampalafriedfish.online",
       "telephone": "+256792460182",
       "address": {
         "@type": "PostalAddress",
@@ -159,8 +161,8 @@ export function StructuredData() {
       "@type": "Organization",
       "name": "Kampala Fried Fish",
       "alternateName": "Olusaniya Kampala",
-      "url": "https://kampalafriedfish.ug",
-      "logo": "https://kampalafriedfish.ug/kampala-fried-fish-logo-removed-bg.png",
+      "url": "https://kampalafriedfish.online",
+      "logo": "https://kampalafriedfish.online/kampala-fried-fish-logo-removed-bg.png",
       "description": "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division.",
       "address": {
         "@type": "PostalAddress",
@@ -196,25 +198,25 @@ export function StructuredData() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://kampalafriedfish.ug"
+          "item": "https://kampalafriedfish.online"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products",
-          "item": "https://kampalafriedfish.ug/#products"
+          "item": "https://kampalafriedfish.online/#products"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Order",
-          "item": "https://kampalafriedfish.ug/order"
+          "item": "https://kampalafriedfish.online/order"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Contact",
-          "item": "https://kampalafriedfish.ug/contact"
+          "item": "https://kampalafriedfish.online/contact"
         }
       ]
     }

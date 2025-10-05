@@ -13,10 +13,14 @@ import { SEOHead } from "@/components/seo-head"
 import { MobileBottomNav } from "@/components/mobile-bottom-nav"
 import { FAQSchema } from "@/components/faq-schema"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
+import { ProductSchema } from "@/components/product-schema"
+import { ReviewSchema } from "@/components/review-schema"
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+import { OrganizationSchema } from "@/components/organization-schema"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kampalafriedfish.ug'),
+  metadataBase: new URL('https://kampalafriedfish.online'),
   title: {
     default: "Kampala Fried Fish - Best Olusaniya in Kampala | Kabusu Market",
     template: "%s | Kampala Fried Fish - Best Olusaniya in Kampala"
@@ -32,7 +36,17 @@ export const metadata: Metadata = {
     "best fried fish in kampala",
     "kampala fish takeaway",
     "uganda fish restaurant",
-    "kampala fish delivery"
+    "kampala fish delivery",
+    "fresh fish kampala",
+    "fish restaurant kampala",
+    "kampala seafood",
+    "ugandan fish dishes",
+    "lake victoria fish",
+    "fish and chips kampala",
+    "kampala fish menu",
+    "fish delivery service kampala",
+    "traditional ugandan fish",
+    "kampala fish prices"
   ],
   authors: [{ name: "Kampala Fried Fish" }],
   creator: "Kampala Fried Fish",
@@ -49,7 +63,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://kampalafriedfish.ug",
+    canonical: "https://kampalafriedfish.online",
   },
   category: "Food & Restaurant",
   classification: "Restaurant",
@@ -66,16 +80,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_UG",
-    url: "https://kampalafriedfish.ug",
+    url: "https://kampalafriedfish.online",
     siteName: "Kampala Fried Fish",
     title: "Kampala Fried Fish - Best Olusaniya in Kampala | Kabusu Market",
     description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division. Fresh fish, authentic Ugandan spices, family dining since 2018.",
     images: [
       {
-        url: "/fish-plate-square.jpg",
+        url: "/fish-with-tomatoes-super-fried10.jpg",
         width: 1200,
         height: 630,
-        alt: "Kampala Fried Fish - Premium Olusaniya",
+        alt: "Kampala Fried Fish - Premium Olusaniya with Tomatoes",
+      },
+      {
+        url: "/fish-with-tomatoes-super-fried001.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Large Lusaniya - Family Size Fried Fish",
+      },
+      {
+        url: "/fish-with-tomatoes-super-fried-ovacado.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fresh Fish with Avocado - Healthy Option",
       },
     ],
   },
@@ -83,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kampala Fried Fish - Best Olusaniya in Kampala",
     description: "Best fried fish in Kampala! Premium Olusaniya (Nile Perch on massive plates) delivery in Kabusu, Rubaga Division.",
-    images: ["/fish-plate-square.jpg"],
+    images: ["/fish-with-tomatoes-super-fried10.jpg"],
     creator: "@kampalafriedfish",
   },
   icons: {
@@ -96,9 +122,9 @@ export const metadata: Metadata = {
     ],
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: "google-site-verification=kampalafriedfish-online-verification-code",
+    yandex: "90993c6596863023",
+    yahoo: "yahoo-site-verification=kampalafriedfish-online-verification-code",
   },
 }
 
@@ -160,6 +186,10 @@ export default function RootLayout({
         <MobileBottomNav />
         <FAQSchema />
         <BreadcrumbNav />
+        <ProductSchema />
+        <ReviewSchema />
+        <BreadcrumbSchema />
+        <OrganizationSchema />
         <Analytics />
       </body>
     </html>

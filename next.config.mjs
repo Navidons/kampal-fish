@@ -16,7 +16,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'kampalafriedfish.ug',
+        hostname: 'kampalafriedfish.online',
         port: '',
         pathname: '/**',
       },

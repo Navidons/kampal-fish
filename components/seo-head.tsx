@@ -15,7 +15,11 @@ export function SEOHead() {
       
       {/* Preload critical resources */}
       <link rel="preload" href="/kampala-fried-fish-logo-removed-bg.png" as="image" />
-      <link rel="preload" href="/fish-plate-square.webp" as="image" />
+      <link rel="preload" href="/fish-with-tomatoes-super-fried10.jpg" as="image" />
+      <link rel="preload" href="/fish-with-tomatoes-super-fried001.jpg" as="image" />
+      <link rel="preload" href="/fish-with-tomatoes-super-fried002.jpg" as="image" />
+      <link rel="preload" href="/fish-with-tomatoes-super-fried007.jpg" as="image" />
+      <link rel="preload" href="/fish-with-tomatoes-super-fried-ovacado.jpg" as="image" />
       
       {/* Critical CSS inline */}
       <style dangerouslySetInnerHTML={{
@@ -77,7 +81,7 @@ export function SEOHead() {
       {/* Twitter Card optimization */}
       <meta name="twitter:site" content="@kampalafriedfish" />
       <meta name="twitter:creator" content="@kampalafriedfish" />
-      <meta name="twitter:domain" content="kampalafriedfish.ug" />
+      <meta name="twitter:domain" content="kampalafriedfish.online" />
       
       {/* Additional performance hints */}
       <link rel="modulepreload" href="/_next/static/chunks/main.js" />

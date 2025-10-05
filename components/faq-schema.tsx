@@ -53,6 +53,62 @@ export function FAQSchema() {
           "name": "Do you offer delivery services?",
           "acceptedAnswer": {
             "@type": "Answer",
+            "text": "Yes! We offer delivery services throughout Kampala, especially in Kabusu, Rubaga Division, and surrounding areas. Contact us via WhatsApp or phone to arrange delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept cash payments and mobile money transfers. Payment can be made upon delivery or pickup. Contact us for specific payment arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fresh is your fish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our fish is sourced fresh from Lake Victoria and other pristine Ugandan waters. We prepare and fry the fish daily to ensure maximum freshness and quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize my order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We offer custom orders by weight (1/2 kg to 8 kg) and can accommodate special requests. Contact us via WhatsApp to discuss your specific needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes your fish special?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our fish is fried to perfection using traditional Ugandan spices and cooking methods. We use only the freshest Nile Perch and serve it on massive plates (Lusaniya style) for an authentic experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have vegetarian options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in fresh fish dishes. However, we can provide fresh vegetables and accompaniments. Please contact us to discuss available options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does delivery take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Delivery time varies by location within Kampala. Generally, we aim for 30-60 minutes depending on distance and current orders. We'll provide an estimated time when you place your order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer delivery services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
             "text": "Yes, we offer delivery services throughout Kampala. Contact us to check if we deliver to your area and to get delivery time estimates."
           }
         }

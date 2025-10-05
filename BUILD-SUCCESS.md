@@ -13,7 +13,7 @@ The build is now working perfectly! Here's what was fixed:
 
 #### **2. Metadata Base Warning**
 - **Problem**: `metadataBase property in metadata export is not set` warnings
-- **Solution**: Added `metadataBase: new URL('https://kampalafriedfish.ug')` to metadata
+- **Solution**: Added `metadataBase: new URL('https://kampalafriedfish.online')` to metadata
 - **Result**: No more metadata warnings, proper social media image URLs
 
 ### 📊 **Build Results**

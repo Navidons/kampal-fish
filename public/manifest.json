@@ -31,16 +31,16 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshot-mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow"
+      "src": "/fish-with-tomatoes-super-fried10.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide"
     },
     {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
+      "src": "/fish-with-tomatoes-super-fried001.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
     }
   ],
   "shortcuts": [
