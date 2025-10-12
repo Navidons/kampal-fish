@@ -12,10 +12,12 @@
     "optimize-images": "npm run convert-webp",
     "generate-pwa-icons": "node generate-pwa-icons.mjs",
     "generate-favicons": "node generate-favicons.mjs",
-    "setup-pwa": "npm run generate-favicons && npm run generate-pwa-icons && npm run convert-webp"
+    "setup-pwa": "npm run generate-favicons && npm run generate-pwa-icons && npm run convert-webp",
+    "seed-products": "node scripts/seed-products.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
+    "@prisma/client": "^6.17.1",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",
@@ -54,9 +56,11 @@
     "geist": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
+    "mysql2": "^3.15.2",
     "next": "14.2.16",
     "next-themes": "^0.4.6",
     "nodemailer": "^7.0.6",
+    "prisma": "^6.17.1",
     "react": "^18",
     "react-day-picker": "9.8.0",
     "react-dom": "^18",

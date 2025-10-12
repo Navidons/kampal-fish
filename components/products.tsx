@@ -6,49 +6,164 @@ import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, Star, Fish } from "lucide-react"
 import Link from "next/link"
 import { IntersectionObserver } from "@/components/intersection-observer"
+import { useEffect, useState } from "react"
+
+interface Product {
+  id: number
+  name: string
+  description: string | null
+  price: string
+  image: string
+  popular: boolean
+  fishType: string | null
+  serving: string | null
+  icon: string | null
+  unitPrice: number | null
+}
+
+interface CustomOrder {
+  id: number
+  weight: string
+  unitPrice: number
+  price: string
+}
 
 export function Products() {
-  const products = [
-    {
-      name: "Small Lusaniya",
-      description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
-      price: "UGX 30,000",
-      image: "/fish-with-tomatoes-super-fried002.jpg",
-      popular: true,
-      fishType: "Nile Perch",
-      serving: "1-2 People",
-      icon: "👥",
-    },
-    {
-      name: "Medium Lusaniya",
-      description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
-      price: "UGX 60,000",
-      image: "/fish-with-tomatoes-super-fried007.jpg",
-      popular: true,
-      fishType: "Nile Perch",
-      serving: "3-4 People",
-      icon: "👨‍👩‍👧",
-    },
-    {
-      name: "Large Lusaniya",
-      description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
-      price: "UGX 90,000",
-      image: "/fish-with-tomatoes-super-fried001.jpg",
-      popular: true,
-      fishType: "Nile Perch",
-      serving: "5+ People",
-      icon: "👨‍👩‍👧‍👦",
-    },
-  ]
+  const [products, setProducts] = useState<Product[]>([])
+  const [customOrders, setCustomOrders] = useState<CustomOrder[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const customOrders = [
-    { weight: "1/2 kg", price: "UGX 15,000" },
-    { weight: "1 kg", price: "UGX 30,000" },
-    { weight: "2 kg", price: "UGX 60,000" },
-    { weight: "4 kg", price: "UGX 120,000" },
-    { weight: "6 kg", price: "UGX 180,000" },
-    { weight: "8 kg", price: "UGX 240,000" },
-  ]
+  useEffect(() => {
+    fetchProducts()
+    fetchCustomOrders()
+  }, [])
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('/api/products')
+      if (response.ok) {
+        const data = await response.json()
+        setProducts(data)
+      } else {
+        console.error('Failed to fetch products')
+        // Fallback to hardcoded data if API fails
+        setProducts([
+          {
+            id: 1,
+            name: "Small Lusaniya",
+            description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
+            price: "UGX 30,000",
+            image: "/fish-with-tomatoes-super-fried002.jpg",
+            popular: true,
+            fishType: "Nile Perch",
+            serving: "1-2 People",
+            icon: "👥",
+            unitPrice: 30000,
+          },
+          {
+            id: 2,
+            name: "Medium Lusaniya",
+            description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
+            price: "UGX 60,000",
+            image: "/fish-with-tomatoes-super-fried007.jpg",
+            popular: true,
+            fishType: "Nile Perch",
+            serving: "3-4 People",
+            icon: "👨‍👩‍👧",
+            unitPrice: 30000,
+          },
+          {
+            id: 3,
+            name: "Large Lusaniya",
+            description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
+            price: "UGX 90,000",
+            image: "/fish-with-tomatoes-super-fried001.jpg",
+            popular: true,
+            fishType: "Nile Perch",
+            serving: "5+ People",
+            icon: "👨‍👩‍👧‍👦",
+            unitPrice: 30000,
+          },
+        ])
+      }
+    } catch (error) {
+      console.error('Error fetching products:', error)
+      // Fallback to hardcoded data
+      setProducts([
+        {
+          id: 1,
+          name: "Small Lusaniya",
+          description: "Perfect for 1-2 people. Best fried fish in Kampala - Nile Perch on massive plates, fried to perfection with authentic Ugandan spices.",
+          price: "UGX 30,000",
+          image: "/fish-with-tomatoes-super-fried002.jpg",
+          popular: true,
+          fishType: "Nile Perch",
+          serving: "1-2 People",
+          icon: "👥",
+          unitPrice: 30000,
+        },
+        {
+          id: 2,
+          name: "Medium Lusaniya",
+          description: "Ideal for 3-4 people. Premium Olusaniya in Kampala - generous portions of golden fried Nile Perch from Kabusu Market.",
+          price: "UGX 60,000",
+          image: "/fish-with-tomatoes-super-fried007.jpg",
+          popular: true,
+          fishType: "Nile Perch",
+          serving: "3-4 People",
+          icon: "👨‍👩‍👧",
+          unitPrice: 30000,
+        },
+        {
+          id: 3,
+          name: "Large Lusaniya",
+          description: "Perfect for families and groups. Best fish delivery in Kampala - massive plates of crispy fried Nile Perch in Rubaga Division.",
+          price: "UGX 90,000",
+          image: "/fish-with-tomatoes-super-fried001.jpg",
+          popular: true,
+          fishType: "Nile Perch",
+          serving: "5+ People",
+          icon: "👨‍👩‍👧‍👦",
+          unitPrice: 30000,
+        },
+      ])
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const fetchCustomOrders = async () => {
+    try {
+      const response = await fetch('/api/custom-orders')
+      if (response.ok) {
+        const data = await response.json()
+        setCustomOrders(data)
+      } else {
+        console.error('Failed to fetch custom orders')
+        // Fallback to hardcoded data if API fails
+        setCustomOrders([
+          { id: 1, weight: "1/2 kg", unitPrice: 30000, price: "UGX 15,000" },
+          { id: 2, weight: "1 kg", unitPrice: 30000, price: "UGX 30,000" },
+          { id: 3, weight: "2 kg", unitPrice: 30000, price: "UGX 60,000" },
+          { id: 4, weight: "4 kg", unitPrice: 30000, price: "UGX 120,000" },
+          { id: 5, weight: "6 kg", unitPrice: 30000, price: "UGX 180,000" },
+          { id: 6, weight: "8 kg", unitPrice: 30000, price: "UGX 240,000" },
+        ])
+      }
+    } catch (error) {
+      console.error('Error fetching custom orders:', error)
+      // Fallback to hardcoded data
+      setCustomOrders([
+        { id: 1, weight: "1/2 kg", unitPrice: 30000, price: "UGX 15,000" },
+        { id: 2, weight: "1 kg", unitPrice: 30000, price: "UGX 30,000" },
+        { id: 3, weight: "2 kg", unitPrice: 30000, price: "UGX 60,000" },
+        { id: 4, weight: "4 kg", unitPrice: 30000, price: "UGX 120,000" },
+        { id: 5, weight: "6 kg", unitPrice: 30000, price: "UGX 180,000" },
+        { id: 6, weight: "8 kg", unitPrice: 30000, price: "UGX 240,000" },
+      ])
+    }
+  }
+
 
   return (
     <section id="products" className="py-12 md:py-20 bg-gradient-to-b from-orange-50/30 to-white">
@@ -78,7 +193,24 @@ export function Products() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {products.map((product, index) => (
+          {loading ? (
+            // Loading skeleton
+            Array.from({ length: 3 }).map((_, index) => (
+              <Card key={index} className="overflow-hidden bg-white border-0 shadow-lg animate-pulse">
+                <div className="h-56 bg-gray-200"></div>
+                <CardHeader className="p-6 pb-4">
+                  <div className="h-6 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-1"></div>
+                  <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <div className="h-16 bg-gray-200 rounded-xl mb-6"></div>
+                  <div className="h-12 bg-gray-200 rounded-xl"></div>
+                </CardContent>
+              </Card>
+            ))
+          ) : (
+            products.map((product, index) => (
             <IntersectionObserver key={index} threshold={0.2}>
               <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-0 shadow-lg">
               <div className="relative overflow-hidden">
@@ -159,7 +291,8 @@ Please confirm availability and delivery details. Thank you!`
               </CardContent>
               </Card>
             </IntersectionObserver>
-          ))}
+            ))
+          )}
         </div>
 
         {/* Custom Orders Section */}
