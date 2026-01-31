@@ -42,3 +42,13 @@ const bucket = getAdminStorage().bucket()
 ```
 
 Install the Admin SDK if needed: `pnpm add firebase-admin`
+
+## 5. Seeding Firestore with products and prices
+
+From the project root (with `.env` or env vars set):
+
+```bash
+pnpm run seed-firestore
+```
+
+This writes the app’s products and custom-order prices into Firestore. After that, the app loads products and prices from Firestore on page load; if Firestore is empty or unavailable, it falls back to the static data in `lib/products-data.ts`.

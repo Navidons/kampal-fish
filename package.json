@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "seed-firestore": "node scripts/seed-firestore.mjs",
     "prebuild": "node scripts/check-dependencies.mjs && node scripts/build-setup.mjs || echo 'Build setup completed with warnings'",
     "build": "next build",
     "dev": "next dev -p 5000",
@@ -73,6 +74,7 @@
     "zod": "3.25.67"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^18",
